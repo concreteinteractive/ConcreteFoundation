@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		036A43C317B786EF00F39ED0 /* CISlideOutTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 036A43C217B786EF00F39ED0 /* CISlideOutTabController.m */; };
 		03E3226217B3D2F0001FE707 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E3226117B3D2F0001FE707 /* UIKit.framework */; };
 		03E3226417B3D2F0001FE707 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E3226317B3D2F0001FE707 /* Foundation.framework */; };
 		03E3226617B3D2F0001FE707 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E3226517B3D2F0001FE707 /* CoreGraphics.framework */; };
@@ -20,9 +21,16 @@
 		03E3228117B3D2F0001FE707 /* CIMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03E3227F17B3D2F0001FE707 /* CIMainViewController.xib */; };
 		03E3228D17B3D4A8001FE707 /* UINavigationController+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E3228C17B3D4A8001FE707 /* UINavigationController+Concrete.m */; };
 		03E3229017B3EF8B001FE707 /* NSMutableArray+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E3228F17B3EF8B001FE707 /* NSMutableArray+Concrete.m */; };
+		03E322AF17B48AB5001FE707 /* NSObject+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E322AE17B48AB5001FE707 /* NSObject+Concrete.m */; };
+		03E322B517B49426001FE707 /* NSDate+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E322B417B49425001FE707 /* NSDate+Concrete.m */; };
+		03E322B817B4BDA1001FE707 /* UIView+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E322B717B4BDA0001FE707 /* UIView+Concrete.m */; };
+		03E322BB17B4BF99001FE707 /* UIApplication+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E322BA17B4BF98001FE707 /* UIApplication+Concrete.m */; };
+		03E322BD17B4BFDE001FE707 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E322BC17B4BFDD001FE707 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		036A43C117B786EF00F39ED0 /* CISlideOutTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CISlideOutTabController.h; path = "Container Controllers/CISlideOutTabController.h"; sourceTree = "<group>"; };
+		036A43C217B786EF00F39ED0 /* CISlideOutTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CISlideOutTabController.m; path = "Container Controllers/CISlideOutTabController.m"; sourceTree = "<group>"; };
 		03E3225E17B3D2F0001FE707 /* ConcreteFoundation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConcreteFoundation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03E3226117B3D2F0001FE707 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		03E3226317B3D2F0001FE707 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -43,6 +51,15 @@
 		03E3228C17B3D4A8001FE707 /* UINavigationController+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+Concrete.m"; path = "ConcreteFoundation/Foundation/UINavigationController+Concrete.m"; sourceTree = "<group>"; };
 		03E3228E17B3EF8B001FE707 /* NSMutableArray+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Concrete.h"; path = "ConcreteFoundation/Foundation/NSMutableArray+Concrete.h"; sourceTree = "<group>"; };
 		03E3228F17B3EF8B001FE707 /* NSMutableArray+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Concrete.m"; path = "ConcreteFoundation/Foundation/NSMutableArray+Concrete.m"; sourceTree = "<group>"; };
+		03E322AD17B48AB5001FE707 /* NSObject+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Concrete.h"; path = "ConcreteFoundation/Foundation/NSObject+Concrete.h"; sourceTree = "<group>"; };
+		03E322AE17B48AB5001FE707 /* NSObject+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Concrete.m"; path = "ConcreteFoundation/Foundation/NSObject+Concrete.m"; sourceTree = "<group>"; };
+		03E322B317B49425001FE707 /* NSDate+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+Concrete.h"; path = "ConcreteFoundation/Foundation/NSDate+Concrete.h"; sourceTree = "<group>"; };
+		03E322B417B49425001FE707 /* NSDate+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+Concrete.m"; path = "ConcreteFoundation/Foundation/NSDate+Concrete.m"; sourceTree = "<group>"; };
+		03E322B617B4BDA0001FE707 /* UIView+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Concrete.h"; path = "ConcreteFoundation/Foundation/UIView+Concrete.h"; sourceTree = "<group>"; };
+		03E322B717B4BDA0001FE707 /* UIView+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Concrete.m"; path = "ConcreteFoundation/Foundation/UIView+Concrete.m"; sourceTree = "<group>"; };
+		03E322B917B4BF97001FE707 /* UIApplication+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+Concrete.h"; path = "ConcreteFoundation/Foundation/UIApplication+Concrete.h"; sourceTree = "<group>"; };
+		03E322BA17B4BF98001FE707 /* UIApplication+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+Concrete.m"; path = "ConcreteFoundation/Foundation/UIApplication+Concrete.m"; sourceTree = "<group>"; };
+		03E322BC17B4BFDD001FE707 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03E3226217B3D2F0001FE707 /* UIKit.framework in Frameworks */,
+				03E322BD17B4BFDE001FE707 /* QuartzCore.framework in Frameworks */,
 				03E3226417B3D2F0001FE707 /* Foundation.framework in Frameworks */,
 				03E3226617B3D2F0001FE707 /* CoreGraphics.framework in Frameworks */,
 			);
@@ -59,10 +77,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		036A43C017B7869900F39ED0 /* Container Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				036A43C117B786EF00F39ED0 /* CISlideOutTabController.h */,
+				036A43C217B786EF00F39ED0 /* CISlideOutTabController.m */,
+			);
+			name = "Container Controllers";
+			sourceTree = "<group>";
+		};
 		03E3225517B3D2F0001FE707 = {
 			isa = PBXGroup;
 			children = (
-				03E3228A17B3D406001FE707 /* Foundation */,
 				03E3226717B3D2F0001FE707 /* ConcreteFoundation */,
 				03E3226017B3D2F0001FE707 /* Frameworks */,
 				03E3225F17B3D2F0001FE707 /* Products */,
@@ -81,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				03E3226117B3D2F0001FE707 /* UIKit.framework */,
+				03E322BC17B4BFDD001FE707 /* QuartzCore.framework */,
 				03E3226317B3D2F0001FE707 /* Foundation.framework */,
 				03E3226517B3D2F0001FE707 /* CoreGraphics.framework */,
 			);
@@ -90,6 +117,8 @@
 		03E3226717B3D2F0001FE707 /* ConcreteFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				03E3228A17B3D406001FE707 /* Foundation */,
+				036A43C017B7869900F39ED0 /* Container Controllers */,
 				03E3227017B3D2F0001FE707 /* CIAppDelegate.h */,
 				03E3227117B3D2F0001FE707 /* CIAppDelegate.m */,
 				03E3227917B3D2F0001FE707 /* CIMainViewController.h */,
@@ -117,12 +146,21 @@
 		03E3228A17B3D406001FE707 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				03E3228B17B3D4A8001FE707 /* UINavigationController+Concrete.h */,
-				03E3228C17B3D4A8001FE707 /* UINavigationController+Concrete.m */,
+				03E322B317B49425001FE707 /* NSDate+Concrete.h */,
+				03E322B417B49425001FE707 /* NSDate+Concrete.m */,
 				03E3228E17B3EF8B001FE707 /* NSMutableArray+Concrete.h */,
 				03E3228F17B3EF8B001FE707 /* NSMutableArray+Concrete.m */,
+				03E322AD17B48AB5001FE707 /* NSObject+Concrete.h */,
+				03E322AE17B48AB5001FE707 /* NSObject+Concrete.m */,
+				03E322B917B4BF97001FE707 /* UIApplication+Concrete.h */,
+				03E322BA17B4BF98001FE707 /* UIApplication+Concrete.m */,
+				03E3228B17B3D4A8001FE707 /* UINavigationController+Concrete.h */,
+				03E3228C17B3D4A8001FE707 /* UINavigationController+Concrete.m */,
+				03E322B617B4BDA0001FE707 /* UIView+Concrete.h */,
+				03E322B717B4BDA0001FE707 /* UIView+Concrete.m */,
 			);
 			name = Foundation;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +235,11 @@
 				03E3227B17B3D2F0001FE707 /* CIMainViewController.m in Sources */,
 				03E3228D17B3D4A8001FE707 /* UINavigationController+Concrete.m in Sources */,
 				03E3229017B3EF8B001FE707 /* NSMutableArray+Concrete.m in Sources */,
+				03E322AF17B48AB5001FE707 /* NSObject+Concrete.m in Sources */,
+				03E322B517B49426001FE707 /* NSDate+Concrete.m in Sources */,
+				03E322B817B4BDA1001FE707 /* UIView+Concrete.m in Sources */,
+				03E322BB17B4BF99001FE707 /* UIApplication+Concrete.m in Sources */,
+				036A43C317B786EF00F39ED0 /* CISlideOutTabController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +362,7 @@
 				03E3228917B3D2F0001FE707 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

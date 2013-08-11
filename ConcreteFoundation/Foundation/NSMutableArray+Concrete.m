@@ -11,7 +11,7 @@
 @implementation NSMutableArray (Concrete)
 
 + (id)mutableArrayUsingWeakReferences {
-    return [self mutableArrayUsingWeakReferencesWithCapacity:0];
+    return [self mutableArrayUsingWeakReferencesWithCapacity:5];
 }
 
 + (id)mutableArrayUsingWeakReferencesWithCapacity:(NSUInteger)capacity {

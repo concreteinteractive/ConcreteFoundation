@@ -32,10 +32,10 @@ typedef NS_OPTIONS(NSUInteger, UINavigationControllerAnimationOptions) {
 // An array of objects that conform to the UINavigationControllerDelegate protocol.
 @property(nonatomic, strong, readonly) NSMutableArray *delegates;
 
-// Adds a modelDelegate to the delegates array
+// Adds a delegate to the delegates array
 - (void) addDelegate:(id <UINavigationControllerDelegate>)delegate;
 
-// Removes a modelDelegate from the delegates array
+// Removes a delegate from the delegates array
 - (void) removeDelegate:(id <UINavigationControllerDelegate>)delegate;
 
 // Pops the top viewController off of the navigation stack, then pushes the new view controller.
