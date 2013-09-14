@@ -8,6 +8,9 @@
 
 #import "UINavigationController+Concrete.h"
 
+@interface UINavigationController ()
+@end
+
 @implementation UINavigationController (Concrete)
 
 // Pops the top viewController off of the navigation stack, then pushes the new view controller.
@@ -98,16 +101,6 @@
                      }
                      completion:^(BOOL finished){}];
     
-    /*
-     UIViewController* poppedViewController = self.topViewController;
-     [UIView beginAnimations:@"View Flip" context:nil];
-     [UIView setAnimationDuration:0.80];
-     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-     [UIView setAnimationTransition: animationTransition forView:self.view cache:NO];
-     [self popViewControllerAnimated:YES];
-     [self pushViewController:viewController animated:YES];
-     [UIView commitAnimations];
-     */
     return poppedViewControllers;
 }
 

@@ -11,6 +11,6 @@
 @interface UITableViewCell (Concrete)
 
 - (void)animateUpdates;
-+ (CGFloat)cellHeightForObject:(id)object;
++ (CGFloat)cellHeightWithWidth:(CGFloat)width forObject:(id)object;
 
 @end

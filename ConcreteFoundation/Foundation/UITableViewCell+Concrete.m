@@ -19,7 +19,7 @@
     }
 }
 
-+ (CGFloat)cellHeightForObject:(id)object
++ (CGFloat)cellHeightWithWidth:(CGFloat)width forObject:(id)object
 {
     return 44.0;
 }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		03559EEB17BEEAA500D2D1CC /* UITableViewCell+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 03559EEA17BEEAA500D2D1CC /* UITableViewCell+Concrete.m */; };
 		036A43C317B786EF00F39ED0 /* CISlideOutTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 036A43C217B786EF00F39ED0 /* CISlideOutTabController.m */; };
+		039F9BB717E500E60064566A /* CILocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 039F9BB617E500E60064566A /* CILocationService.m */; };
+		039F9BBA17E500FF0064566A /* NSDictionary+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 039F9BB917E500FE0064566A /* NSDictionary+Concrete.m */; };
 		03E3226217B3D2F0001FE707 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E3226117B3D2F0001FE707 /* UIKit.framework */; };
 		03E3226417B3D2F0001FE707 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E3226317B3D2F0001FE707 /* Foundation.framework */; };
 		03E3226617B3D2F0001FE707 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E3226517B3D2F0001FE707 /* CoreGraphics.framework */; };
@@ -34,6 +36,11 @@
 		03559EEA17BEEAA500D2D1CC /* UITableViewCell+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+Concrete.m"; path = "ConcreteFoundation/Foundation/UITableViewCell+Concrete.m"; sourceTree = "<group>"; };
 		036A43C117B786EF00F39ED0 /* CISlideOutTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CISlideOutTabController.h; path = "Container Controllers/CISlideOutTabController.h"; sourceTree = "<group>"; };
 		036A43C217B786EF00F39ED0 /* CISlideOutTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CISlideOutTabController.m; path = "Container Controllers/CISlideOutTabController.m"; sourceTree = "<group>"; };
+		039F9BB517E500E60064566A /* CILocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CILocationService.h; path = Services/CILocationService.h; sourceTree = "<group>"; };
+		039F9BB617E500E60064566A /* CILocationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CILocationService.m; path = Services/CILocationService.m; sourceTree = "<group>"; };
+		039F9BB817E500FE0064566A /* NSDictionary+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Concrete.h"; path = "ConcreteFoundation/Foundation/NSDictionary+Concrete.h"; sourceTree = "<group>"; };
+		039F9BB917E500FE0064566A /* NSDictionary+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Concrete.m"; path = "ConcreteFoundation/Foundation/NSDictionary+Concrete.m"; sourceTree = "<group>"; };
+		039F9BBB17E501120064566A /* ConcreteMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConcreteMacros.h; sourceTree = "<group>"; };
 		03E3225E17B3D2F0001FE707 /* ConcreteFoundation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConcreteFoundation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03E3226117B3D2F0001FE707 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		03E3226317B3D2F0001FE707 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -92,6 +99,8 @@
 		03B2970817B855AC00A282CF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				039F9BB517E500E60064566A /* CILocationService.h */,
+				039F9BB617E500E60064566A /* CILocationService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -127,6 +136,7 @@
 		03E3226717B3D2F0001FE707 /* ConcreteFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				039F9BBB17E501120064566A /* ConcreteMacros.h */,
 				03E3228A17B3D406001FE707 /* Foundation */,
 				03B2970817B855AC00A282CF /* Services */,
 				036A43C017B7869900F39ED0 /* Container Controllers */,
@@ -157,6 +167,8 @@
 		03E3228A17B3D406001FE707 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				039F9BB817E500FE0064566A /* NSDictionary+Concrete.h */,
+				039F9BB917E500FE0064566A /* NSDictionary+Concrete.m */,
 				03E322B317B49425001FE707 /* NSDate+Concrete.h */,
 				03E322B417B49425001FE707 /* NSDate+Concrete.m */,
 				03E3228E17B3EF8B001FE707 /* NSMutableArray+Concrete.h */,
@@ -254,6 +266,8 @@
 				03E322BB17B4BF99001FE707 /* UIApplication+Concrete.m in Sources */,
 				036A43C317B786EF00F39ED0 /* CISlideOutTabController.m in Sources */,
 				03559EEB17BEEAA500D2D1CC /* UITableViewCell+Concrete.m in Sources */,
+				039F9BB717E500E60064566A /* CILocationService.m in Sources */,
+				039F9BBA17E500FF0064566A /* NSDictionary+Concrete.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@
 
 @interface NSMutableArray (Concrete)
 
-+ (id)mutableArrayUsingWeakReferences;
-+ (id)mutableArrayUsingWeakReferencesWithCapacity:(NSUInteger)capacity;
++ (id)mutableArrayUsingUnretainedReferences;
++ (id)mutableArrayUsingUnretainedReferencesWithCapacity:(NSUInteger)capacity;
 
 @end

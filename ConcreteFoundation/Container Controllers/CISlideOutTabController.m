@@ -9,8 +9,8 @@
 #import "CISlideOutTabController.h"
 
 #define SLIDE_OUT_ANIMATION_DURATION 0.3
-#define DEFAULT_SLIDE_OUT_WIDTH      245
-#define DEFAULT_FULL_SLIDE_OUT_WIDTH 320
+#define DEFAULT_SLIDE_OUT_WIDTH      245.0
+#define DEFAULT_FULL_SLIDE_OUT_WIDTH 320.0
 
 @interface CISlideOutTabController ()
 @property (nonatomic, strong) UIView* rightSlideOutContainerView;
@@ -156,14 +156,14 @@
     CGRect newMainFrame = CGRectMake(0,
                                  0,
                                  self.mainView.frame.size.width,
-                                 self.mainView.frame.size.height);
+                                     self.mainView.frame.size.height);
     CGRect newRightFrame = CGRectMake(0,
-                                 0,
-                                 self.rightSlideOutContainerView.frame.size.width,
-                                 self.rightSlideOutContainerView.frame.size.height);
+                                      0,
+                                      self.rightSlideOutContainerView.frame.size.width,
+                                      self.rightSlideOutContainerView.frame.size.height);
     if (animated)
     {
-        [UIView animateWithDuration:SLIDE_OUT_ANIMATION_DURATION
+      [UIView animateWithDuration:SLIDE_OUT_ANIMATION_DURATION
                          animations:^{
                              weakSelf.mainView.frame = newMainFrame;
                              weakSelf.rightSlideOutContainerView.frame = newRightFrame;
@@ -235,7 +235,7 @@
     
     if (self.rightSlideOutContainerView.frame.origin.x > 0)
     {
-        CGRect newFrame = CGRectMake(self.fullLeftSlideOutWidth,
+        CGRect newFrame = CGRectMake(self.fullLeftSlideOutWidth -1,
                                      0,
                                      self.rightSlideOutContainerView.frame.size.width,
                                      self.rightSlideOutContainerView.frame.size.height);

@@ -10,13 +10,11 @@
 
 @implementation NSMutableArray (Concrete)
 
-+ (id)mutableArrayUsingWeakReferences {
-    return [self mutableArrayUsingWeakReferencesWithCapacity:5];
++ (id)mutableArrayUsingUnretainedReferences {
+    return [self mutableArrayUsingUnretainedReferencesWithCapacity:5];
 }
 
-
-// TODO: Use NSPointerArray instead to simulate?
-+ (id)mutableArrayUsingWeakReferencesWithCapacity:(NSUInteger)capacity {
++ (id)mutableArrayUsingUnretainedReferencesWithCapacity:(NSUInteger)capacity {
     CFArrayCallBacks callbacks = {0, NULL, NULL, CFCopyDescription, CFEqual};
     // We create a weak reference array
     return (id)CFBridgingRelease(CFArrayCreateMutable(0, capacity, &callbacks));

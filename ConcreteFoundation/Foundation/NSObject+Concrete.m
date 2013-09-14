@@ -121,4 +121,51 @@
     return returnValue;
 }
 
+/*
+
+- (id)performSelector:(SEL)aSelector withCompletionBlock:(void (^)(void))block
+{
+    id result = objc_msgSend(self, aSelector, nil);
+    block();
+    return result;
+}
+
+- (id)performSelector:(SEL)aSelector withCompletionBlock:(void (^)(void))block withObjects:(id)objects, ... NS_REQUIRES_NIL_TERMINATION
+{
+    va_list argumentlist;
+    va_start(argumentlist, objects);
+    id result = objc_msgSend(self, aSelector, va_arg(argumentlist, id), nil);
+    va_end(argumentlist);
+    block();
+    return result;
+}
+
+- (void *)performSelector:(SEL)aSelector withCompletionBlock:(void (^)(void))block withArgumentPointers:(void *)argumentPointers, ... NS_REQUIRES_NIL_TERMINATION
+{
+    void* returnValue = NULL;
+    NSMethodSignature* signature = [[self class] instanceMethodSignatureForSelector:aSelector];
+    NSInvocation* invocation = [NSInvocation invocationWithMethodSignature:signature];
+    [invocation setTarget:self];
+    [invocation setSelector:aSelector];
+    
+    va_list argumentlist;
+    va_start(argumentlist, argumentPointers);
+    NSInteger index = 2;
+    for (void* argument = argumentPointers; argument > 0; argument = va_arg(argumentlist, void*))
+    {
+        [invocation setArgument:argument atIndex:index];
+        ++index;
+    }
+    va_end(argumentlist);
+    [invocation invoke];
+    [invocation getReturnValue:&returnValue];
+    if (block != nil)
+    {
+        block();
+    }
+    return returnValue;
+}
+ 
+ */
+
 @end
