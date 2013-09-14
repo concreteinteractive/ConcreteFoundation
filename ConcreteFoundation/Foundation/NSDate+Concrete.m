@@ -99,6 +99,22 @@
     return result;
 }
 
+- (NSString *)stringWithFormat:(NSString *)format
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:format];
+    return [dateFormatter stringFromDate:self];
+}
+
++ (NSDate *)dateFromString:(NSString *)dateString withFormat:(NSString *)format
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
+    [dateFormatter setLocale:[NSLocale systemLocale]];
+    [dateFormatter setDateFormat:format];
+    return [dateFormatter dateFromString:dateString];
+}
+
 #pragma mark - Relative dates from the current date
 + (NSDate *)dateTomorrow {
     NSTimeInterval timeInterval = [NSDate timeIntervalSinceReferenceDate] + (CITimeUnitDay * 1);

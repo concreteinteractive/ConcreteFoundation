@@ -25,6 +25,10 @@ typedef enum {
 + (NSString *)stringForTimeInterval:(NSTimeInterval)interval;
 + (NSString *)stringForTimeInterval:(NSTimeInterval)interval withMaxTimeBlock:(CITimeUnit)maxTimeBlock;
 
+- (NSString *)stringWithFormat:(NSString *)format;
+
++ (NSDate *)dateFromString:(NSString *)dateString withFormat:(NSString *)format;
+
 + (NSDate *)dateTomorrow;
 + (NSDate *)dateYesterday;
 + (NSDate *)dateWithDaysFromNow:(NSInteger) dDays;

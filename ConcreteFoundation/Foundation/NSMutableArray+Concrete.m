@@ -14,6 +14,8 @@
     return [self mutableArrayUsingWeakReferencesWithCapacity:5];
 }
 
+
+// TODO: Use NSPointerArray instead to simulate?
 + (id)mutableArrayUsingWeakReferencesWithCapacity:(NSUInteger)capacity {
     CFArrayCallBacks callbacks = {0, NULL, NULL, CFCopyDescription, CFEqual};
     // We create a weak reference array

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03559EEB17BEEAA500D2D1CC /* UITableViewCell+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 03559EEA17BEEAA500D2D1CC /* UITableViewCell+Concrete.m */; };
 		036A43C317B786EF00F39ED0 /* CISlideOutTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 036A43C217B786EF00F39ED0 /* CISlideOutTabController.m */; };
 		03E3226217B3D2F0001FE707 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E3226117B3D2F0001FE707 /* UIKit.framework */; };
 		03E3226417B3D2F0001FE707 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E3226317B3D2F0001FE707 /* Foundation.framework */; };
@@ -29,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03559EE917BEEAA400D2D1CC /* UITableViewCell+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+Concrete.h"; path = "ConcreteFoundation/Foundation/UITableViewCell+Concrete.h"; sourceTree = "<group>"; };
+		03559EEA17BEEAA500D2D1CC /* UITableViewCell+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+Concrete.m"; path = "ConcreteFoundation/Foundation/UITableViewCell+Concrete.m"; sourceTree = "<group>"; };
 		036A43C117B786EF00F39ED0 /* CISlideOutTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CISlideOutTabController.h; path = "Container Controllers/CISlideOutTabController.h"; sourceTree = "<group>"; };
 		036A43C217B786EF00F39ED0 /* CISlideOutTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CISlideOutTabController.m; path = "Container Controllers/CISlideOutTabController.m"; sourceTree = "<group>"; };
 		03E3225E17B3D2F0001FE707 /* ConcreteFoundation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConcreteFoundation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +89,13 @@
 			name = "Container Controllers";
 			sourceTree = "<group>";
 		};
+		03B2970817B855AC00A282CF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		03E3225517B3D2F0001FE707 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				03E3228A17B3D406001FE707 /* Foundation */,
+				03B2970817B855AC00A282CF /* Services */,
 				036A43C017B7869900F39ED0 /* Container Controllers */,
 				03E3227017B3D2F0001FE707 /* CIAppDelegate.h */,
 				03E3227117B3D2F0001FE707 /* CIAppDelegate.m */,
@@ -158,6 +169,8 @@
 				03E3228C17B3D4A8001FE707 /* UINavigationController+Concrete.m */,
 				03E322B617B4BDA0001FE707 /* UIView+Concrete.h */,
 				03E322B717B4BDA0001FE707 /* UIView+Concrete.m */,
+				03559EE917BEEAA400D2D1CC /* UITableViewCell+Concrete.h */,
+				03559EEA17BEEAA500D2D1CC /* UITableViewCell+Concrete.m */,
 			);
 			name = Foundation;
 			path = ..;
@@ -240,6 +253,7 @@
 				03E322B817B4BDA1001FE707 /* UIView+Concrete.m in Sources */,
 				03E322BB17B4BF99001FE707 /* UIApplication+Concrete.m in Sources */,
 				036A43C317B786EF00F39ED0 /* CISlideOutTabController.m in Sources */,
+				03559EEB17BEEAA500D2D1CC /* UITableViewCell+Concrete.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

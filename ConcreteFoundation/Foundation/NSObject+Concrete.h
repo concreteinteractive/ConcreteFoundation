@@ -10,8 +10,23 @@
 
 @interface NSObject (Concrete)
 
-- (id)performSelector:(SEL)aSelector withCompletionBlock:(void (^)(void))block;
+@property (nonatomic, strong, readonly) NSArray* delegates;
+
++ (id)sharedInstance;
++ (void)purgeSharedInstance;
+
++ (id)threadInstance;
++ (void)purgeThreadInstance;
+
+- (void) addDelegate:(id)delegate;
+- (void) removeDelegate:(id)delegate;
+
 - (id)performSelector:(SEL)aSelector withObjects:(id)objects, ... NS_REQUIRES_NIL_TERMINATION;
-- (id)performSelector:(SEL)aSelector withCompletionBlock:(void (^)(void))block withObjects:(id)objects, ... NS_REQUIRES_NIL_TERMINATION;
+
+// The following method works similar to the normal perfomSelector methods,
+// but can handle arguments and returns with standard C data types as well as NSObjects.
+// All arguments must be passed as pointers to the normal argument, and the return value
+// may need to be cast. This have not been throughly tested, so use with caution.
+- (void *)performSelector:(SEL)aSelector withArgumentPointers:(void *)argumentPointers, ... NS_REQUIRES_NIL_TERMINATION;
 
 @end

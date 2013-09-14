@@ -7,39 +7,8 @@
 //
 
 #import "UINavigationController+Concrete.h"
-#import "NSMutableArray+Concrete.h"
-#import <objc/runtime.h>
-
-const void* kDelegatesKey;
-
-@interface UINavigationController ()
-
-// An array of objects that conform to the UINavigationControllerDelegate protocol.
-@property(nonatomic, strong, readwrite) NSMutableArray *delegates;
-
-@end
 
 @implementation UINavigationController (Concrete)
-
-// Adds a delegate to the delegates array
-- (void) addDelegate:(id <UINavigationControllerDelegate>)delegate
-{
-    if (self.delegates == nil)
-    {
-        self.delegates = [NSMutableArray mutableArrayUsingWeakReferences];
-    }
-    if(delegate != nil && ![self.delegates containsObject:delegate]){
-        [self.delegates addObject:delegate];
-    }
-}
-
-// Removes a delegate from the delegates array
-- (void) removeDelegate:(id <UINavigationControllerDelegate>)delegate
-{
-    if(delegate != nil){
-        [self.delegates removeObject:delegate];
-    }
-}
 
 // Pops the top viewController off of the navigation stack, then pushes the new view controller.
 // Returns the popped controller.
@@ -150,61 +119,6 @@ const void* kDelegatesKey;
     return [self popToViewController:[self.viewControllers objectAtIndex:0]
              thenPushViewControllers:viewControllersToPush
                 withAnimationOptions:animationOptions];
-}
-
-#pragma mark - @property delegates accessors
-
-- (void)setDelegates:(NSMutableArray *)delegates
-{
-    objc_setAssociatedObject(self, kDelegatesKey, delegates, OBJC_ASSOCIATION_RETAIN);
-}
-
-- (NSString*)delegates
-{
-    return objc_getAssociatedObject(self, kDelegatesKey);
-}
-
-#pragma mark - @property delegate override
-
-- (void)setDelegate:(id<UINavigationControllerDelegate>)delegate
-{
-    if (delegate != nil)
-    {
-        NSLog(@"UINavigationController delegate property has been overridden. Adding object to the delegates array.");
-        [self addDelegate:delegate];
-    } else
-    {
-        NSLog(@"UINavigationController delegate property has been overridden. Please use [UINavigationController removeDelegate:].");
-    }
-}
-
-- (id<UINavigationControllerDelegate>)delegate
-{
-    NSLog(@"UINavigationController delegate property has been overridden. Returning the last object in the delegates array.");
-    return [self.delegates lastObject];
-}
-
-#pragma mark - UINavigationControllerDelegate
-
-// Called when the navigation controller shows a new top view controller via a push, pop or setting of the view controller stack.
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    SEL selector = @selector(navigationController:willShowViewController:animated:);
-    for (id delegate in self.delegates) {
-        if ([delegate respondsToSelector:selector]) {
-            [delegate navigationController:navigationController willShowViewController:viewController animated:animated];
-        }
-    }
-}
-
-- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    SEL selector = @selector(navigationController:didShowViewController:animated:);
-    for (id delegate in self.delegates) {
-        if ([delegate respondsToSelector:selector]) {
-            [delegate navigationController:navigationController didShowViewController:viewController animated:animated];
-        }
-    }
 }
 
 @end

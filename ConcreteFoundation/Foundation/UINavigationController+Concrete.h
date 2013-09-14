@@ -29,15 +29,6 @@ typedef NS_OPTIONS(NSUInteger, UINavigationControllerAnimationOptions) {
 
 @interface UINavigationController (Concrete)
 
-// An array of objects that conform to the UINavigationControllerDelegate protocol.
-@property(nonatomic, strong, readonly) NSMutableArray *delegates;
-
-// Adds a delegate to the delegates array
-- (void) addDelegate:(id <UINavigationControllerDelegate>)delegate;
-
-// Removes a delegate from the delegates array
-- (void) removeDelegate:(id <UINavigationControllerDelegate>)delegate;
-
 // Pops the top viewController off of the navigation stack, then pushes the new view controller.
 // Returns the popped controller.
 - (UIViewController *)popViewControllerThenPushViewController:(UIViewController *)viewControllerToPush

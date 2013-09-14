@@ -8,7 +8,7 @@
 
 #import "CISlideOutTabController.h"
 
-#define SLIDE_OUT_ANIMATION_DURATION 0.1
+#define SLIDE_OUT_ANIMATION_DURATION 0.3
 #define DEFAULT_SLIDE_OUT_WIDTH      245
 #define DEFAULT_FULL_SLIDE_OUT_WIDTH 320
 
@@ -153,18 +153,26 @@
 - (void)showCenterAnimated:(BOOL)animated completion:(void (^)(BOOL finished))completion
 {
     __weak CISlideOutTabController *weakSelf = self;
-    CGRect newFrame = CGRectMake(0,
+    CGRect newMainFrame = CGRectMake(0,
                                  0,
                                  self.mainView.frame.size.width,
                                  self.mainView.frame.size.height);
+    CGRect newRightFrame = CGRectMake(0,
+                                 0,
+                                 self.rightSlideOutContainerView.frame.size.width,
+                                 self.rightSlideOutContainerView.frame.size.height);
     if (animated)
     {
         [UIView animateWithDuration:SLIDE_OUT_ANIMATION_DURATION
-                         animations:^{weakSelf.mainView.frame = newFrame;}
+                         animations:^{
+                             weakSelf.mainView.frame = newMainFrame;
+                             weakSelf.rightSlideOutContainerView.frame = newRightFrame;
+                         }
                          completion:completion];
     } else
     {
-        self.mainView.frame = newFrame;
+        self.mainView.frame = newMainFrame;
+        self.rightSlideOutContainerView.frame = newRightFrame;
     }
 }
 
@@ -210,7 +218,6 @@
 - (void)setSelectedViewController:(UIViewController *)selectedViewController
 {
     __weak CISlideOutTabController *weakSelf = self;
-    _selectedIndex = [self.viewControllers indexOfObject:selectedViewController];
     _selectedViewController = selectedViewController;
     
     void (^showSelected)(BOOL) = ^(BOOL notUsed){
@@ -255,10 +262,11 @@
 
 - (void)setSelectedIndex:(NSUInteger)selectedIndex
 {
-    if (selectedIndex > [self.viewControllers count])
+    if (selectedIndex >= [self.viewControllers count])
     {
         selectedIndex = 0;
     }
+    _selectedIndex = selectedIndex;
     self.selectedViewController = [self.viewControllers objectAtIndex:selectedIndex];
 }
 
@@ -303,7 +311,7 @@
     }
     
     // Create new array
-    self.viewControllers = [NSMutableArray array];
+    _viewControllers = [NSMutableArray array];
     
     // Add new viewControllers
     for (UIViewController* viewController in viewControllers)
