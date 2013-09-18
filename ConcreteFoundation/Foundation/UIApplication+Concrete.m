@@ -12,6 +12,11 @@
 
 static NSInteger networkOperationCount = 0;
 
++ (UIViewController *)rootViewController
+{
+    return [UIApplication sharedApplication].keyWindow.rootViewController;
+}
+
 + (void)setRootViewController:(UIViewController *)viewController
 {
     [UIApplication sharedApplication].keyWindow.rootViewController = viewController;
