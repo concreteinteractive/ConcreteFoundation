@@ -91,11 +91,13 @@ static NSUInteger timerLoopCount = 0;
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     NSLog(@"User location updated");
     CLLocation* location = [locations lastObject];
-    NSDate* eventDate = location.timestamp;
-    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
-    if (abs(howRecent) < 15.0 && location.horizontalAccuracy > 0 && location.horizontalAccuracy < 100) {
-        [manager stopUpdatingLocation];
-    }
+    //NSDate* eventDate = location.timestamp;
+    //NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
+#warning Revisit this to find a better implementation for setting accuracy and timing location tracking shutoff
+    //if (abs(howRecent) < 15.0 && location.horizontalAccuracy > 0 && location.horizontalAccuracy < 25) {
+        self.currentLocation = location;
+        [self.delegate locationService:self didUpdateLocation:location];
+    //}
 }
 
 - (void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
