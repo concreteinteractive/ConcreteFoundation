@@ -32,6 +32,7 @@
 		03E322B817B4BDA1001FE707 /* UIView+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E322B717B4BDA0001FE707 /* UIView+Concrete.m */; };
 		03E322BB17B4BF99001FE707 /* UIApplication+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E322BA17B4BF98001FE707 /* UIApplication+Concrete.m */; };
 		03E322BD17B4BFDE001FE707 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E322BC17B4BFDD001FE707 /* QuartzCore.framework */; };
+		03E40DD31811D91B00F2105D /* UIImage+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E40DD21811D91B00F2105D /* UIImage+Concrete.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,8 @@
 		03E322B917B4BF97001FE707 /* UIApplication+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+Concrete.h"; path = "ConcreteFoundation/Foundation/UIApplication+Concrete.h"; sourceTree = "<group>"; };
 		03E322BA17B4BF98001FE707 /* UIApplication+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+Concrete.m"; path = "ConcreteFoundation/Foundation/UIApplication+Concrete.m"; sourceTree = "<group>"; };
 		03E322BC17B4BFDD001FE707 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		03E40DD11811D91B00F2105D /* UIImage+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Concrete.h"; path = "ConcreteFoundation/Foundation/UIImage+Concrete.h"; sourceTree = "<group>"; };
+		03E40DD21811D91B00F2105D /* UIImage+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Concrete.m"; path = "ConcreteFoundation/Foundation/UIImage+Concrete.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +207,8 @@
 				03E322B717B4BDA0001FE707 /* UIView+Concrete.m */,
 				03559EE917BEEAA400D2D1CC /* UITableViewCell+Concrete.h */,
 				03559EEA17BEEAA500D2D1CC /* UITableViewCell+Concrete.m */,
+				03E40DD11811D91B00F2105D /* UIImage+Concrete.h */,
+				03E40DD21811D91B00F2105D /* UIImage+Concrete.m */,
 			);
 			name = Foundation;
 			path = ..;
@@ -280,6 +285,7 @@
 				03E3227217B3D2F0001FE707 /* CIAppDelegate.m in Sources */,
 				03E3227B17B3D2F0001FE707 /* CIMainViewController.m in Sources */,
 				03E3228D17B3D4A8001FE707 /* UINavigationController+Concrete.m in Sources */,
+				03E40DD31811D91B00F2105D /* UIImage+Concrete.m in Sources */,
 				03E3229017B3EF8B001FE707 /* NSMutableArray+Concrete.m in Sources */,
 				03E322AF17B48AB5001FE707 /* NSObject+Concrete.m in Sources */,
 				03E322B517B49426001FE707 /* NSDate+Concrete.m in Sources */,
