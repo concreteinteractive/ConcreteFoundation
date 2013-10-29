@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0325F51B181F30AA009060DD /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325F51A181F30AA009060DD /* UIImage+ImageEffects.m */; };
+		0325F51D181F3123009060DD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0325F51C181F3123009060DD /* ImageIO.framework */; };
 		03559EEB17BEEAA500D2D1CC /* UITableViewCell+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 03559EEA17BEEAA500D2D1CC /* UITableViewCell+Concrete.m */; };
 		036A43C317B786EF00F39ED0 /* CISlideOutTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 036A43C217B786EF00F39ED0 /* CISlideOutTabController.m */; };
 		039F9BB717E500E60064566A /* CILocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 039F9BB617E500E60064566A /* CILocationService.m */; };
@@ -36,6 +38,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0325F519181F30AA009060DD /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "Apple Code/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		0325F51A181F30AA009060DD /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Apple Code/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		0325F51C181F3123009060DD /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		03559EE917BEEAA400D2D1CC /* UITableViewCell+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+Concrete.h"; path = "ConcreteFoundation/Foundation/UITableViewCell+Concrete.h"; sourceTree = "<group>"; };
 		03559EEA17BEEAA500D2D1CC /* UITableViewCell+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+Concrete.m"; path = "ConcreteFoundation/Foundation/UITableViewCell+Concrete.m"; sourceTree = "<group>"; };
 		036A43C117B786EF00F39ED0 /* CISlideOutTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CISlideOutTabController.h; path = "Container Controllers/CISlideOutTabController.h"; sourceTree = "<group>"; };
@@ -87,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0325F51D181F3123009060DD /* ImageIO.framework in Frameworks */,
 				03E3226217B3D2F0001FE707 /* UIKit.framework in Frameworks */,
 				039F9C0417EA568E0064566A /* MapKit.framework in Frameworks */,
 				039F9C0217EA56600064566A /* CoreLocation.framework in Frameworks */,
@@ -99,6 +105,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0325F518181F304C009060DD /* Apple Code */ = {
+			isa = PBXGroup;
+			children = (
+				0325F519181F30AA009060DD /* UIImage+ImageEffects.h */,
+				0325F51A181F30AA009060DD /* UIImage+ImageEffects.m */,
+			);
+			name = "Apple Code";
+			sourceTree = "<group>";
+		};
 		036A43C017B7869900F39ED0 /* Container Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +161,7 @@
 		03E3226017B3D2F0001FE707 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0325F51C181F3123009060DD /* ImageIO.framework */,
 				039F9C0317EA568E0064566A /* MapKit.framework */,
 				039F9C0117EA56600064566A /* CoreLocation.framework */,
 				03E3226117B3D2F0001FE707 /* UIKit.framework */,
@@ -159,6 +175,7 @@
 		03E3226717B3D2F0001FE707 /* ConcreteFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				0325F518181F304C009060DD /* Apple Code */,
 				039F9BBB17E501120064566A /* ConcreteMacros.h */,
 				03E3228A17B3D406001FE707 /* Foundation */,
 				03B2970817B855AC00A282CF /* Services */,
@@ -281,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0325F51B181F30AA009060DD /* UIImage+ImageEffects.m in Sources */,
 				03E3226E17B3D2F0001FE707 /* main.m in Sources */,
 				03E3227217B3D2F0001FE707 /* CIAppDelegate.m in Sources */,
 				03E3227B17B3D2F0001FE707 /* CIMainViewController.m in Sources */,
@@ -327,6 +345,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -358,6 +377,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
