@@ -10,6 +10,7 @@
 		0325F51B181F30AA009060DD /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325F51A181F30AA009060DD /* UIImage+ImageEffects.m */; };
 		0325F51D181F3123009060DD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0325F51C181F3123009060DD /* ImageIO.framework */; };
 		03559EEB17BEEAA500D2D1CC /* UITableViewCell+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 03559EEA17BEEAA500D2D1CC /* UITableViewCell+Concrete.m */; };
+		036410F31835672300BAA48F /* UIAlertView+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 036410F21835672300BAA48F /* UIAlertView+Concrete.m */; };
 		036A43C317B786EF00F39ED0 /* CISlideOutTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 036A43C217B786EF00F39ED0 /* CISlideOutTabController.m */; };
 		039F9BB717E500E60064566A /* CILocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 039F9BB617E500E60064566A /* CILocationService.m */; };
 		039F9BBA17E500FF0064566A /* NSDictionary+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 039F9BB917E500FE0064566A /* NSDictionary+Concrete.m */; };
@@ -43,6 +44,8 @@
 		0325F51C181F3123009060DD /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		03559EE917BEEAA400D2D1CC /* UITableViewCell+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+Concrete.h"; path = "ConcreteFoundation/Foundation/UITableViewCell+Concrete.h"; sourceTree = "<group>"; };
 		03559EEA17BEEAA500D2D1CC /* UITableViewCell+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+Concrete.m"; path = "ConcreteFoundation/Foundation/UITableViewCell+Concrete.m"; sourceTree = "<group>"; };
+		036410F11835672300BAA48F /* UIAlertView+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Concrete.h"; path = "ConcreteFoundation/Foundation/UIAlertView+Concrete.h"; sourceTree = "<group>"; };
+		036410F21835672300BAA48F /* UIAlertView+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Concrete.m"; path = "ConcreteFoundation/Foundation/UIAlertView+Concrete.m"; sourceTree = "<group>"; };
 		036A43C117B786EF00F39ED0 /* CISlideOutTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CISlideOutTabController.h; path = "Container Controllers/CISlideOutTabController.h"; sourceTree = "<group>"; };
 		036A43C217B786EF00F39ED0 /* CISlideOutTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CISlideOutTabController.m; path = "Container Controllers/CISlideOutTabController.m"; sourceTree = "<group>"; };
 		039F9BB517E500E60064566A /* CILocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CILocationService.h; path = Services/CILocationService.h; sourceTree = "<group>"; };
@@ -226,6 +229,8 @@
 				03559EEA17BEEAA500D2D1CC /* UITableViewCell+Concrete.m */,
 				03E40DD11811D91B00F2105D /* UIImage+Concrete.h */,
 				03E40DD21811D91B00F2105D /* UIImage+Concrete.m */,
+				036410F11835672300BAA48F /* UIAlertView+Concrete.h */,
+				036410F21835672300BAA48F /* UIAlertView+Concrete.m */,
 			);
 			name = Foundation;
 			path = ..;
@@ -310,6 +315,7 @@
 				03E322B817B4BDA1001FE707 /* UIView+Concrete.m in Sources */,
 				03E322BB17B4BF99001FE707 /* UIApplication+Concrete.m in Sources */,
 				036A43C317B786EF00F39ED0 /* CISlideOutTabController.m in Sources */,
+				036410F31835672300BAA48F /* UIAlertView+Concrete.m in Sources */,
 				03559EEB17BEEAA500D2D1CC /* UITableViewCell+Concrete.m in Sources */,
 				039F9BB717E500E60064566A /* CILocationService.m in Sources */,
 				039F9BBA17E500FF0064566A /* NSDictionary+Concrete.m in Sources */,

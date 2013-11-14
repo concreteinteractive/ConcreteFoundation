@@ -28,8 +28,13 @@
             [hudView setRoundedCorners:UIRectCornerAllCorners radius:10.0];
             [self addSubview:hudView];
             
+            CGFloat spinnerY = 50;
+            if (text == nil)
+            {
+                spinnerY += 15;
+            }
             self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-            self.activityIndicatorView.frame = CGRectMake(65, 50, self.activityIndicatorView.bounds.size.width, self.activityIndicatorView.bounds.size.height);
+            self.activityIndicatorView.frame = CGRectMake(65, spinnerY, self.activityIndicatorView.bounds.size.width, self.activityIndicatorView.bounds.size.height);
             [hudView addSubview:self.activityIndicatorView];
             [self.activityIndicatorView startAnimating];
             

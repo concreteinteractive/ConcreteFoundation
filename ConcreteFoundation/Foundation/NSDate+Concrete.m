@@ -59,7 +59,7 @@
 
 + (NSString *)stringForTimeInterval:(NSTimeInterval)interval withMaxTimeBlock:(CITimeUnit)maxTimeBlock
 {
-    NSInteger number = CITimeUnitSecond;
+    int number = 0;
     NSString* result = nil;
     if (abs(interval) < CITimeUnitMinute || maxTimeBlock == CITimeUnitSecond)
     {
