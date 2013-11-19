@@ -18,14 +18,24 @@
     self = [self initWithTitle:title message:message delegate:delegate cancelButtonTitle:cancelButtonTitle otherButtonTitles:nil];
     if (self)
     {
-        va_list argumentList;
-        va_start(argumentList, otherButtonTitles);
-        NSString* buttonTitle = nil;
-        while((buttonTitle = va_arg(argumentList, NSString *)))
+        if (otherButtonTitles != nil)
         {
-            [self addButtonWithTitle:buttonTitle];
+            if ([otherButtonTitles isKindOfClass:[NSString class]])
+            {
+                [self addButtonWithTitle:otherButtonTitles];
+            }
+            va_list argumentList;
+            va_start(argumentList, otherButtonTitles);
+            id buttonTitle = nil;
+            while((buttonTitle = va_arg(argumentList, id)))
+            {
+                if ([buttonTitle isKindOfClass:[NSString class]])
+                {
+                    [self addButtonWithTitle:buttonTitle];
+                }
+            }
+            va_end(argumentList);
         }
-        va_end(argumentList);
         self.userInfo = userInfo;
     }
     return self;
