@@ -12,10 +12,10 @@
 
 @property (nonatomic, strong, readonly) NSArray* delegates;
 
-+ (id)sharedInstance;
++ (instancetype)sharedInstance;
 + (void)purgeSharedInstance;
 
-+ (id)threadInstance;
++ (instancetype)threadInstance;
 + (void)purgeThreadInstance;
 
 - (void) addDelegate:(id)delegate;

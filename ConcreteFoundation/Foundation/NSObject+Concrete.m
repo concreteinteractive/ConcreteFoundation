@@ -14,7 +14,7 @@
 
 @implementation NSObject (Concrete)
 
-+ (id)sharedInstance
++ (instancetype)sharedInstance
 {
     @synchronized(NSStringFromClass([self class])) {
         if (objc_getAssociatedObject(self, SHARED_INSTANCE_KEY) == nil) {
@@ -37,7 +37,7 @@
     }
 }
 
-+ (id)threadInstance
++ (instancetype)threadInstance
 {
     NSMutableDictionary* threadDictionary = [[NSThread currentThread] threadDictionary];
     id threadInstance = [threadDictionary objectForKey:NSStringFromClass([self class])];
