@@ -30,6 +30,12 @@
     objc_setAssociatedObject(self, SHARED_INSTANCE_KEY, sharedInstance, OBJC_ASSOCIATION_RETAIN);
 }
 
++ (BOOL)sharedInstanceExists
+{
+    id instance = objc_getAssociatedObject(self, SHARED_INSTANCE_KEY);
+    return instance != nil;
+}
+
 + (void)purgeSharedInstance
 {
     @synchronized(NSStringFromClass([self class])) {
@@ -47,6 +53,13 @@
         [threadDictionary setObject:threadInstance forKey:NSStringFromClass([self class])];
     }
     return threadInstance;
+}
+
++ (BOOL)threadInstanceExists
+{
+    NSMutableDictionary* threadDictionary = [[NSThread currentThread] threadDictionary];
+    id instance = [threadDictionary objectForKey:NSStringFromClass([self class])];
+    return instance != nil;
 }
 
 + (void)purgeThreadInstance
