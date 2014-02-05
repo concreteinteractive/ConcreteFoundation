@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_7_0
 #import "UIImage+ImageEffects.h"
+#endif
 
 @interface UIImage (Concrete)
 
