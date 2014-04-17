@@ -96,7 +96,6 @@
 {
     if (self.leftViewController != nil)
     {
-        __weak CISlideOutTabController *weakSelf = self;
         CGRect newFrame = CGRectMake(self.leftSlideOutWidth,
                                      0,
                                      self.rightSlideOutContainerView.frame.size.width,
@@ -105,11 +104,13 @@
         if (animated)
         {
             showLeft = ^{[UIView animateWithDuration:SLIDE_OUT_ANIMATION_DURATION
-                                          animations:^{weakSelf.rightSlideOutContainerView.frame = newFrame;}
+                                          animations:^{self.rightSlideOutContainerView.frame = newFrame;}
                                           completion:completion];};
         } else
         {
-            showLeft = ^{weakSelf.rightSlideOutContainerView.frame = newFrame;};
+            showLeft = ^{self.rightSlideOutContainerView.frame = newFrame;
+                completion(TRUE);
+            };
         }
         if (self.mainView.frame.origin.x < 0)
         {
@@ -125,7 +126,6 @@
 {
     if (self.rightViewController != nil)
     {
-        __weak CISlideOutTabController *weakSelf = self;
         CGRect newFrame = CGRectMake(-self.rightSlideOutWidth,
                                      0,
                                      self.mainView.frame.size.width,
@@ -134,11 +134,13 @@
         if (animated)
         {
             showRight = ^{[UIView animateWithDuration:SLIDE_OUT_ANIMATION_DURATION
-                                           animations:^{weakSelf.mainView.frame = newFrame;}
+                                           animations:^{self.mainView.frame = newFrame;}
                                            completion:completion];};
         } else
         {
-            showRight = ^{weakSelf.mainView.frame = newFrame;};
+            showRight = ^{self.mainView.frame = newFrame;
+                completion(TRUE);
+            };
         }
         if (self.rightSlideOutContainerView.frame.origin.x > 0)
         {
@@ -152,10 +154,9 @@
 
 - (void)showCenterAnimated:(BOOL)animated completion:(void (^)(BOOL finished))completion
 {
-    __weak CISlideOutTabController *weakSelf = self;
     CGRect newMainFrame = CGRectMake(0,
-                                 0,
-                                 self.mainView.frame.size.width,
+                                     0,
+                                     self.mainView.frame.size.width,
                                      self.mainView.frame.size.height);
     CGRect newRightFrame = CGRectMake(0,
                                       0,
@@ -163,16 +164,17 @@
                                       self.rightSlideOutContainerView.frame.size.height);
     if (animated)
     {
-      [UIView animateWithDuration:SLIDE_OUT_ANIMATION_DURATION
+        [UIView animateWithDuration:SLIDE_OUT_ANIMATION_DURATION
                          animations:^{
-                             weakSelf.mainView.frame = newMainFrame;
-                             weakSelf.rightSlideOutContainerView.frame = newRightFrame;
+                             self.mainView.frame = newMainFrame;
+                             self.rightSlideOutContainerView.frame = newRightFrame;
                          }
                          completion:completion];
     } else
     {
         self.mainView.frame = newMainFrame;
         self.rightSlideOutContainerView.frame = newRightFrame;
+        completion(TRUE);
     }
 }
 
@@ -189,15 +191,10 @@
     {
         [(NSMutableArray *)self.viewControllers insertObject:viewController atIndex:index];
         [self addChildViewController:viewController];
-        viewController.view.frame = self.mainView.bounds;
-        viewController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        [self.mainView insertSubview:viewController.view atIndex:(NSInteger)index];
         [viewController didMoveToParentViewController:self];
     } else {
         NSLog(@"[CISlideOutTabController addViewController:] rejected object:\n%@", [viewController description]);
     }
-    // Refresh tab visibility
-    self.selectedIndex = self.selectedIndex;
 }
 
 - (void)removeViewController:(UIViewController *)viewController
@@ -217,32 +214,31 @@
 
 - (void)setSelectedViewController:(UIViewController *)selectedViewController
 {
-    __weak CISlideOutTabController *weakSelf = self;
     _selectedViewController = selectedViewController;
-    
     void (^showSelected)(BOOL) = ^(BOOL notUsed){
         for (UIViewController* viewController in self.viewControllers)
         {
             if (viewController == self.selectedViewController)
             {
-                viewController.view.hidden = FALSE;
+                [self.mainView addSubview:viewController.view];
             } else
             {
-                viewController.view.hidden = TRUE;
+                [viewController.view removeFromSuperview];
             }
         }
-        [self showCenter];};
+        [self showCenter];
+    };
     
     if (self.rightSlideOutContainerView.frame.origin.x > 0)
     {
-        CGRect newFrame = CGRectMake(self.fullLeftSlideOutWidth -1,
+        CGRect newFrame = CGRectMake(self.fullLeftSlideOutWidth,
                                      0,
                                      self.rightSlideOutContainerView.frame.size.width,
                                      self.rightSlideOutContainerView.frame.size.height);
         [UIView animateWithDuration:SLIDE_OUT_ANIMATION_DURATION *
          (self.fullLeftSlideOutWidth - self.rightSlideOutContainerView.frame.origin.x) /
          self.leftSlideOutWidth
-                         animations:^{weakSelf.rightSlideOutContainerView.frame = newFrame;}
+                         animations:^{self.rightSlideOutContainerView.frame = newFrame;}
                          completion:showSelected];
     } else if (self.mainView.frame.origin.x < 0)
     {
@@ -253,7 +249,7 @@
         [UIView animateWithDuration:SLIDE_OUT_ANIMATION_DURATION *
          (self.fullRightSlideOutWidth + self.mainView.frame.origin.x) /
          self.rightSlideOutWidth
-                         animations:^{weakSelf.mainView.frame = newFrame;}
+                         animations:^{self.mainView.frame = newFrame;}
                          completion:showSelected];
     } else {
         showSelected(YES);
@@ -305,7 +301,8 @@
 - (void)setViewControllers:(NSArray *)viewControllers
 {
     // Make sure previous viewControllers are removed as children
-    for (UIViewController* viewController in self.viewControllers)
+    NSArray* oldViewControllers = [self.viewControllers copy];
+    for (UIViewController* viewController in oldViewControllers)
     {
         [self removeViewController:viewController];
     }
