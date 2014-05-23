@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0325F51B181F30AA009060DD /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325F51A181F30AA009060DD /* UIImage+ImageEffects.m */; };
 		0325F51D181F3123009060DD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0325F51C181F3123009060DD /* ImageIO.framework */; };
+		032CA662192F4A580021363E /* CIRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA661192F4A580021363E /* CIRootViewController.m */; };
+		032CA665192F4F540021363E /* CIPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA664192F4F540021363E /* CIPlaceholderTextView.m */; };
 		03559EEB17BEEAA500D2D1CC /* UITableViewCell+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 03559EEA17BEEAA500D2D1CC /* UITableViewCell+Concrete.m */; };
 		036410F31835672300BAA48F /* UIAlertView+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 036410F21835672300BAA48F /* UIAlertView+Concrete.m */; };
 		036A43C317B786EF00F39ED0 /* CISlideOutTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 036A43C217B786EF00F39ED0 /* CISlideOutTabController.m */; };
@@ -42,6 +44,10 @@
 		0325F519181F30AA009060DD /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "Apple Code/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		0325F51A181F30AA009060DD /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Apple Code/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		0325F51C181F3123009060DD /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		032CA660192F4A580021363E /* CIRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CIRootViewController.h; path = "Container Controllers/CIRootViewController.h"; sourceTree = "<group>"; };
+		032CA661192F4A580021363E /* CIRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CIRootViewController.m; path = "Container Controllers/CIRootViewController.m"; sourceTree = "<group>"; };
+		032CA663192F4F540021363E /* CIPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CIPlaceholderTextView.h; path = Views/CIPlaceholderTextView.h; sourceTree = "<group>"; };
+		032CA664192F4F540021363E /* CIPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CIPlaceholderTextView.m; path = Views/CIPlaceholderTextView.m; sourceTree = "<group>"; };
 		03559EE917BEEAA400D2D1CC /* UITableViewCell+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+Concrete.h"; path = "ConcreteFoundation/Foundation/UITableViewCell+Concrete.h"; sourceTree = "<group>"; };
 		03559EEA17BEEAA500D2D1CC /* UITableViewCell+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+Concrete.m"; path = "ConcreteFoundation/Foundation/UITableViewCell+Concrete.m"; sourceTree = "<group>"; };
 		036410F11835672300BAA48F /* UIAlertView+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Concrete.h"; path = "ConcreteFoundation/Foundation/UIAlertView+Concrete.h"; sourceTree = "<group>"; };
@@ -120,6 +126,8 @@
 		036A43C017B7869900F39ED0 /* Container Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				032CA660192F4A580021363E /* CIRootViewController.h */,
+				032CA661192F4A580021363E /* CIRootViewController.m */,
 				036A43C117B786EF00F39ED0 /* CISlideOutTabController.h */,
 				036A43C217B786EF00F39ED0 /* CISlideOutTabController.m */,
 			);
@@ -131,6 +139,8 @@
 			children = (
 				039F9BFE17EA4B7E0064566A /* CIActivityIndicatorView.h */,
 				039F9BFF17EA4B7E0064566A /* CIActivityIndicatorView.m */,
+				032CA663192F4F540021363E /* CIPlaceholderTextView.h */,
+				032CA664192F4F540021363E /* CIPlaceholderTextView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -309,6 +319,7 @@
 				03E3227B17B3D2F0001FE707 /* CIMainViewController.m in Sources */,
 				03E3228D17B3D4A8001FE707 /* UINavigationController+Concrete.m in Sources */,
 				03E40DD31811D91B00F2105D /* UIImage+Concrete.m in Sources */,
+				032CA662192F4A580021363E /* CIRootViewController.m in Sources */,
 				03E3229017B3EF8B001FE707 /* NSMutableArray+Concrete.m in Sources */,
 				03E322AF17B48AB5001FE707 /* NSObject+Concrete.m in Sources */,
 				03E322B517B49426001FE707 /* NSDate+Concrete.m in Sources */,
@@ -317,6 +328,7 @@
 				036A43C317B786EF00F39ED0 /* CISlideOutTabController.m in Sources */,
 				036410F31835672300BAA48F /* UIAlertView+Concrete.m in Sources */,
 				03559EEB17BEEAA500D2D1CC /* UITableViewCell+Concrete.m in Sources */,
+				032CA665192F4F540021363E /* CIPlaceholderTextView.m in Sources */,
 				039F9BB717E500E60064566A /* CILocationService.m in Sources */,
 				039F9BBA17E500FF0064566A /* NSDictionary+Concrete.m in Sources */,
 				039F9C0017EA4B7E0064566A /* CIActivityIndicatorView.m in Sources */,
