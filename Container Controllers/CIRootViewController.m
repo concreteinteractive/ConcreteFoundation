@@ -25,6 +25,11 @@
     return nil;
 }
 
+- (NSArray *)delegates
+{
+    return [super delegates];
+}
+
 - (void)addDelegate:(id<CIRootViewControllerDelegate>)delegate
 {
     [super addDelegate:delegate];
