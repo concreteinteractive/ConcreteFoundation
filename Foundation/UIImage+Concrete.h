@@ -14,7 +14,35 @@
 @interface UIImage (Concrete)
 
 // Returns an image that has been transformed using the original image's
-// metadata to appear correctly in conexts where the metadata is ignored.
+// metadata to appear correctly in contexts where the metadata is ignored.
 - (UIImage *)imageWithOrientationNormalized;
+
+
+#pragma mark - Resizing
+- (UIImage *)croppedImage:(CGRect)bounds;
+
+- (UIImage *)thumbnailImage:(NSInteger)thumbnailSize
+          transparentBorder:(NSUInteger)borderSize
+               cornerRadius:(NSUInteger)cornerRadius
+       interpolationQuality:(CGInterpolationQuality)quality;
+
+- (UIImage *)resizedImage:(CGSize)newSize
+     interpolationQuality:(CGInterpolationQuality)quality;
+
+- (UIImage *)resizedImageWithContentMode:(UIViewContentMode)contentMode
+                                  bounds:(CGSize)bounds
+                    interpolationQuality:(CGInterpolationQuality)quality;
+
+
+#pragma mark - Alpha support
+
+- (BOOL)hasAlpha;
+- (UIImage *)imageWithAlpha;
+- (UIImage *)transparentBorderImage:(NSUInteger)borderSize;
+
+
+#pragma mark - Rounded corners
+
+- (UIImage *)roundedCornerImage:(NSInteger)cornerSize borderSize:(NSInteger)borderSize;
 
 @end

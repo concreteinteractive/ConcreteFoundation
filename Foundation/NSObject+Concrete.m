@@ -69,15 +69,15 @@
 
 - (NSArray *)delegates
 {
-    if (objc_getAssociatedObject(self, DELEGATES_KEY) == nil)
-    {
-        objc_setAssociatedObject(self, DELEGATES_KEY, [NSPointerArray weakObjectsPointerArray], OBJC_ASSOCIATION_RETAIN);
-    }
-    return ((NSPointerArray *)objc_getAssociatedObject(self, DELEGATES_KEY)).allObjects;
+    return [self delegatesArray].allObjects;
 }
 
 - (NSPointerArray *)delegatesArray
 {
+    if (objc_getAssociatedObject(self, DELEGATES_KEY) == nil)
+    {
+        objc_setAssociatedObject(self, DELEGATES_KEY, [NSPointerArray weakObjectsPointerArray], OBJC_ASSOCIATION_RETAIN);
+    }
     return ((NSPointerArray *)objc_getAssociatedObject(self, DELEGATES_KEY));
 }
 

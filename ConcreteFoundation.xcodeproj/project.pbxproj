@@ -7,93 +7,93 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0325F51B181F30AA009060DD /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 0325F51A181F30AA009060DD /* UIImage+ImageEffects.m */; };
 		0325F51D181F3123009060DD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0325F51C181F3123009060DD /* ImageIO.framework */; };
-		032CA662192F4A580021363E /* CIRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA661192F4A580021363E /* CIRootViewController.m */; };
-		032CA665192F4F540021363E /* CIPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA664192F4F540021363E /* CIPlaceholderTextView.m */; };
-		03559EEB17BEEAA500D2D1CC /* UITableViewCell+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 03559EEA17BEEAA500D2D1CC /* UITableViewCell+Concrete.m */; };
-		036410F31835672300BAA48F /* UIAlertView+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 036410F21835672300BAA48F /* UIAlertView+Concrete.m */; };
-		036A43C317B786EF00F39ED0 /* CISlideOutTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 036A43C217B786EF00F39ED0 /* CISlideOutTabController.m */; };
-		039F9BB717E500E60064566A /* CILocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 039F9BB617E500E60064566A /* CILocationService.m */; };
-		039F9BBA17E500FF0064566A /* NSDictionary+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 039F9BB917E500FE0064566A /* NSDictionary+Concrete.m */; };
-		039F9C0017EA4B7E0064566A /* CIActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 039F9BFF17EA4B7E0064566A /* CIActivityIndicatorView.m */; };
+		032CA6E019300AB40021363E /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA6DF19300AB40021363E /* UIImage+ImageEffects.m */; };
+		032CA72A19300BCE0021363E /* CILocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA72919300BCE0021363E /* CILocationService.m */; };
+		032CA74019300BF60021363E /* NSDate+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA72D19300BF60021363E /* NSDate+Concrete.m */; };
+		032CA74119300BF60021363E /* NSDictionary+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA72F19300BF60021363E /* NSDictionary+Concrete.m */; };
+		032CA74219300BF60021363E /* NSMutableArray+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA73119300BF60021363E /* NSMutableArray+Concrete.m */; };
+		032CA74319300BF60021363E /* NSObject+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA73319300BF60021363E /* NSObject+Concrete.m */; };
+		032CA74419300BF60021363E /* UIAlertView+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA73519300BF60021363E /* UIAlertView+Concrete.m */; };
+		032CA74519300BF60021363E /* UIApplication+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA73719300BF60021363E /* UIApplication+Concrete.m */; };
+		032CA74619300BF60021363E /* UIImage+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA73919300BF60021363E /* UIImage+Concrete.m */; };
+		032CA74719300BF60021363E /* UINavigationController+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA73B19300BF60021363E /* UINavigationController+Concrete.m */; };
+		032CA74819300BF60021363E /* UITableViewCell+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA73D19300BF60021363E /* UITableViewCell+Concrete.m */; };
+		032CA74919300BF60021363E /* UIView+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA73F19300BF60021363E /* UIView+Concrete.m */; };
+		032CA74E19300C020021363E /* CIRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA74B19300C020021363E /* CIRootViewController.m */; };
+		032CA74F19300C020021363E /* CISlideOutTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA74D19300C020021363E /* CISlideOutTabController.m */; };
+		032CA75419300C0F0021363E /* CIActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA75119300C0F0021363E /* CIActivityIndicatorView.m */; };
+		032CA75519300C0F0021363E /* CIPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA75319300C0F0021363E /* CIPlaceholderTextView.m */; };
+		032CA75719300CBC0021363E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA75619300CBC0021363E /* main.m */; };
+		032CA75A19300CE40021363E /* CIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA75919300CE40021363E /* CIAppDelegate.m */; };
+		032CA75D19300D0A0021363E /* CIMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 032CA75C19300D0A0021363E /* CIMainViewController.m */; };
+		032CA76019300D390021363E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 032CA75E19300D390021363E /* InfoPlist.strings */; };
+		032CA76319300E2A0021363E /* CIMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 032CA76119300E2A0021363E /* CIMainViewController.xib */; };
+		032CA76719300E460021363E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 032CA76419300E460021363E /* Default-568h@2x.png */; };
+		032CA76819300E460021363E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 032CA76519300E460021363E /* Default.png */; };
+		032CA76919300E460021363E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 032CA76619300E460021363E /* Default@2x.png */; };
 		039F9C0217EA56600064566A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039F9C0117EA56600064566A /* CoreLocation.framework */; };
 		039F9C0417EA568E0064566A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 039F9C0317EA568E0064566A /* MapKit.framework */; };
 		03E3226217B3D2F0001FE707 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E3226117B3D2F0001FE707 /* UIKit.framework */; };
 		03E3226417B3D2F0001FE707 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E3226317B3D2F0001FE707 /* Foundation.framework */; };
 		03E3226617B3D2F0001FE707 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E3226517B3D2F0001FE707 /* CoreGraphics.framework */; };
-		03E3226C17B3D2F0001FE707 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03E3226A17B3D2F0001FE707 /* InfoPlist.strings */; };
-		03E3226E17B3D2F0001FE707 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E3226D17B3D2F0001FE707 /* main.m */; };
-		03E3227217B3D2F0001FE707 /* CIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E3227117B3D2F0001FE707 /* CIAppDelegate.m */; };
-		03E3227417B3D2F0001FE707 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 03E3227317B3D2F0001FE707 /* Default.png */; };
-		03E3227617B3D2F0001FE707 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03E3227517B3D2F0001FE707 /* Default@2x.png */; };
-		03E3227817B3D2F0001FE707 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03E3227717B3D2F0001FE707 /* Default-568h@2x.png */; };
-		03E3227B17B3D2F0001FE707 /* CIMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E3227A17B3D2F0001FE707 /* CIMainViewController.m */; };
-		03E3228117B3D2F0001FE707 /* CIMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03E3227F17B3D2F0001FE707 /* CIMainViewController.xib */; };
-		03E3228D17B3D4A8001FE707 /* UINavigationController+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E3228C17B3D4A8001FE707 /* UINavigationController+Concrete.m */; };
-		03E3229017B3EF8B001FE707 /* NSMutableArray+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E3228F17B3EF8B001FE707 /* NSMutableArray+Concrete.m */; };
-		03E322AF17B48AB5001FE707 /* NSObject+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E322AE17B48AB5001FE707 /* NSObject+Concrete.m */; };
-		03E322B517B49426001FE707 /* NSDate+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E322B417B49425001FE707 /* NSDate+Concrete.m */; };
-		03E322B817B4BDA1001FE707 /* UIView+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E322B717B4BDA0001FE707 /* UIView+Concrete.m */; };
-		03E322BB17B4BF99001FE707 /* UIApplication+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E322BA17B4BF98001FE707 /* UIApplication+Concrete.m */; };
 		03E322BD17B4BFDE001FE707 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E322BC17B4BFDD001FE707 /* QuartzCore.framework */; };
-		03E40DD31811D91B00F2105D /* UIImage+Concrete.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E40DD21811D91B00F2105D /* UIImage+Concrete.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0325F519181F30AA009060DD /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "Apple Code/UIImage+ImageEffects.h"; sourceTree = "<group>"; };
-		0325F51A181F30AA009060DD /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Apple Code/UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		0325F51C181F3123009060DD /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		032CA660192F4A580021363E /* CIRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CIRootViewController.h; path = "Container Controllers/CIRootViewController.h"; sourceTree = "<group>"; };
-		032CA661192F4A580021363E /* CIRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CIRootViewController.m; path = "Container Controllers/CIRootViewController.m"; sourceTree = "<group>"; };
-		032CA663192F4F540021363E /* CIPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CIPlaceholderTextView.h; path = Views/CIPlaceholderTextView.h; sourceTree = "<group>"; };
-		032CA664192F4F540021363E /* CIPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CIPlaceholderTextView.m; path = Views/CIPlaceholderTextView.m; sourceTree = "<group>"; };
-		03559EE917BEEAA400D2D1CC /* UITableViewCell+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+Concrete.h"; path = "ConcreteFoundation/Foundation/UITableViewCell+Concrete.h"; sourceTree = "<group>"; };
-		03559EEA17BEEAA500D2D1CC /* UITableViewCell+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+Concrete.m"; path = "ConcreteFoundation/Foundation/UITableViewCell+Concrete.m"; sourceTree = "<group>"; };
-		036410F11835672300BAA48F /* UIAlertView+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Concrete.h"; path = "ConcreteFoundation/Foundation/UIAlertView+Concrete.h"; sourceTree = "<group>"; };
-		036410F21835672300BAA48F /* UIAlertView+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Concrete.m"; path = "ConcreteFoundation/Foundation/UIAlertView+Concrete.m"; sourceTree = "<group>"; };
-		036A43C117B786EF00F39ED0 /* CISlideOutTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CISlideOutTabController.h; path = "Container Controllers/CISlideOutTabController.h"; sourceTree = "<group>"; };
-		036A43C217B786EF00F39ED0 /* CISlideOutTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CISlideOutTabController.m; path = "Container Controllers/CISlideOutTabController.m"; sourceTree = "<group>"; };
-		039F9BB517E500E60064566A /* CILocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CILocationService.h; path = Services/CILocationService.h; sourceTree = "<group>"; };
-		039F9BB617E500E60064566A /* CILocationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CILocationService.m; path = Services/CILocationService.m; sourceTree = "<group>"; };
-		039F9BB817E500FE0064566A /* NSDictionary+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Concrete.h"; path = "ConcreteFoundation/Foundation/NSDictionary+Concrete.h"; sourceTree = "<group>"; };
-		039F9BB917E500FE0064566A /* NSDictionary+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Concrete.m"; path = "ConcreteFoundation/Foundation/NSDictionary+Concrete.m"; sourceTree = "<group>"; };
+		032CA6CD192FFC800021363E /* ConcreteFoundation-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ConcreteFoundation-Info.plist"; sourceTree = SOURCE_ROOT; };
+		032CA6D0193003470021363E /* ConcreteFoundation-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ConcreteFoundation-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		032CA6DE19300AB40021363E /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+ImageEffects.h"; path = "Apple Code/UIImage+ImageEffects.h"; sourceTree = SOURCE_ROOT; };
+		032CA6DF19300AB40021363E /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ImageEffects.m"; path = "Apple Code/UIImage+ImageEffects.m"; sourceTree = SOURCE_ROOT; };
+		032CA72819300BCE0021363E /* CILocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CILocationService.h; path = Services/CILocationService.h; sourceTree = SOURCE_ROOT; };
+		032CA72919300BCE0021363E /* CILocationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CILocationService.m; path = Services/CILocationService.m; sourceTree = SOURCE_ROOT; };
+		032CA72C19300BF60021363E /* NSDate+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+Concrete.h"; path = "Foundation/NSDate+Concrete.h"; sourceTree = SOURCE_ROOT; };
+		032CA72D19300BF60021363E /* NSDate+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+Concrete.m"; path = "Foundation/NSDate+Concrete.m"; sourceTree = SOURCE_ROOT; };
+		032CA72E19300BF60021363E /* NSDictionary+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+Concrete.h"; path = "Foundation/NSDictionary+Concrete.h"; sourceTree = SOURCE_ROOT; };
+		032CA72F19300BF60021363E /* NSDictionary+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+Concrete.m"; path = "Foundation/NSDictionary+Concrete.m"; sourceTree = SOURCE_ROOT; };
+		032CA73019300BF60021363E /* NSMutableArray+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Concrete.h"; path = "Foundation/NSMutableArray+Concrete.h"; sourceTree = SOURCE_ROOT; };
+		032CA73119300BF60021363E /* NSMutableArray+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Concrete.m"; path = "Foundation/NSMutableArray+Concrete.m"; sourceTree = SOURCE_ROOT; };
+		032CA73219300BF60021363E /* NSObject+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Concrete.h"; path = "Foundation/NSObject+Concrete.h"; sourceTree = SOURCE_ROOT; };
+		032CA73319300BF60021363E /* NSObject+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Concrete.m"; path = "Foundation/NSObject+Concrete.m"; sourceTree = SOURCE_ROOT; };
+		032CA73419300BF60021363E /* UIAlertView+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Concrete.h"; path = "Foundation/UIAlertView+Concrete.h"; sourceTree = SOURCE_ROOT; };
+		032CA73519300BF60021363E /* UIAlertView+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Concrete.m"; path = "Foundation/UIAlertView+Concrete.m"; sourceTree = SOURCE_ROOT; };
+		032CA73619300BF60021363E /* UIApplication+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+Concrete.h"; path = "Foundation/UIApplication+Concrete.h"; sourceTree = SOURCE_ROOT; };
+		032CA73719300BF60021363E /* UIApplication+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+Concrete.m"; path = "Foundation/UIApplication+Concrete.m"; sourceTree = SOURCE_ROOT; };
+		032CA73819300BF60021363E /* UIImage+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Concrete.h"; path = "Foundation/UIImage+Concrete.h"; sourceTree = SOURCE_ROOT; };
+		032CA73919300BF60021363E /* UIImage+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Concrete.m"; path = "Foundation/UIImage+Concrete.m"; sourceTree = SOURCE_ROOT; };
+		032CA73A19300BF60021363E /* UINavigationController+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+Concrete.h"; path = "Foundation/UINavigationController+Concrete.h"; sourceTree = SOURCE_ROOT; };
+		032CA73B19300BF60021363E /* UINavigationController+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+Concrete.m"; path = "Foundation/UINavigationController+Concrete.m"; sourceTree = SOURCE_ROOT; };
+		032CA73C19300BF60021363E /* UITableViewCell+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableViewCell+Concrete.h"; path = "Foundation/UITableViewCell+Concrete.h"; sourceTree = SOURCE_ROOT; };
+		032CA73D19300BF60021363E /* UITableViewCell+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableViewCell+Concrete.m"; path = "Foundation/UITableViewCell+Concrete.m"; sourceTree = SOURCE_ROOT; };
+		032CA73E19300BF60021363E /* UIView+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Concrete.h"; path = "Foundation/UIView+Concrete.h"; sourceTree = SOURCE_ROOT; };
+		032CA73F19300BF60021363E /* UIView+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Concrete.m"; path = "Foundation/UIView+Concrete.m"; sourceTree = SOURCE_ROOT; };
+		032CA74A19300C020021363E /* CIRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CIRootViewController.h; path = "Container Controllers/CIRootViewController.h"; sourceTree = SOURCE_ROOT; };
+		032CA74B19300C020021363E /* CIRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CIRootViewController.m; path = "Container Controllers/CIRootViewController.m"; sourceTree = SOURCE_ROOT; };
+		032CA74C19300C020021363E /* CISlideOutTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CISlideOutTabController.h; path = "Container Controllers/CISlideOutTabController.h"; sourceTree = SOURCE_ROOT; };
+		032CA74D19300C020021363E /* CISlideOutTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CISlideOutTabController.m; path = "Container Controllers/CISlideOutTabController.m"; sourceTree = SOURCE_ROOT; };
+		032CA75019300C0F0021363E /* CIActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CIActivityIndicatorView.h; path = Views/CIActivityIndicatorView.h; sourceTree = SOURCE_ROOT; };
+		032CA75119300C0F0021363E /* CIActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CIActivityIndicatorView.m; path = Views/CIActivityIndicatorView.m; sourceTree = SOURCE_ROOT; };
+		032CA75219300C0F0021363E /* CIPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CIPlaceholderTextView.h; path = Views/CIPlaceholderTextView.h; sourceTree = SOURCE_ROOT; };
+		032CA75319300C0F0021363E /* CIPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CIPlaceholderTextView.m; path = Views/CIPlaceholderTextView.m; sourceTree = SOURCE_ROOT; };
+		032CA75619300CBC0021363E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
+		032CA75819300CE40021363E /* CIAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		032CA75919300CE40021363E /* CIAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAppDelegate.m; sourceTree = SOURCE_ROOT; };
+		032CA75B19300D0A0021363E /* CIMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIMainViewController.h; sourceTree = SOURCE_ROOT; };
+		032CA75C19300D0A0021363E /* CIMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIMainViewController.m; sourceTree = SOURCE_ROOT; };
+		032CA75F19300D390021363E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		032CA76219300E2A0021363E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CIMainViewController.xib; sourceTree = SOURCE_ROOT; };
+		032CA76419300E460021363E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = SOURCE_ROOT; };
+		032CA76519300E460021363E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
+		032CA76619300E460021363E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = SOURCE_ROOT; };
 		039F9BBB17E501120064566A /* ConcreteMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConcreteMacros.h; sourceTree = "<group>"; };
-		039F9BFE17EA4B7E0064566A /* CIActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CIActivityIndicatorView.h; path = Views/CIActivityIndicatorView.h; sourceTree = "<group>"; };
-		039F9BFF17EA4B7E0064566A /* CIActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CIActivityIndicatorView.m; path = Views/CIActivityIndicatorView.m; sourceTree = "<group>"; };
 		039F9C0117EA56600064566A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		039F9C0317EA568E0064566A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		03E3225E17B3D2F0001FE707 /* ConcreteFoundation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConcreteFoundation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03E3226117B3D2F0001FE707 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		03E3226317B3D2F0001FE707 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		03E3226517B3D2F0001FE707 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		03E3226917B3D2F0001FE707 /* ConcreteFoundation-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ConcreteFoundation-Info.plist"; sourceTree = "<group>"; };
-		03E3226B17B3D2F0001FE707 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		03E3226D17B3D2F0001FE707 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		03E3226F17B3D2F0001FE707 /* ConcreteFoundation-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ConcreteFoundation-Prefix.pch"; sourceTree = "<group>"; };
-		03E3227017B3D2F0001FE707 /* CIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CIAppDelegate.h; sourceTree = "<group>"; };
-		03E3227117B3D2F0001FE707 /* CIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CIAppDelegate.m; sourceTree = "<group>"; };
-		03E3227317B3D2F0001FE707 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		03E3227517B3D2F0001FE707 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		03E3227717B3D2F0001FE707 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		03E3227917B3D2F0001FE707 /* CIMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CIMainViewController.h; sourceTree = "<group>"; };
-		03E3227A17B3D2F0001FE707 /* CIMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CIMainViewController.m; sourceTree = "<group>"; };
-		03E3228017B3D2F0001FE707 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CIMainViewController.xib; sourceTree = "<group>"; };
-		03E3228B17B3D4A8001FE707 /* UINavigationController+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+Concrete.h"; path = "ConcreteFoundation/Foundation/UINavigationController+Concrete.h"; sourceTree = "<group>"; };
-		03E3228C17B3D4A8001FE707 /* UINavigationController+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+Concrete.m"; path = "ConcreteFoundation/Foundation/UINavigationController+Concrete.m"; sourceTree = "<group>"; };
-		03E3228E17B3EF8B001FE707 /* NSMutableArray+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Concrete.h"; path = "ConcreteFoundation/Foundation/NSMutableArray+Concrete.h"; sourceTree = "<group>"; };
-		03E3228F17B3EF8B001FE707 /* NSMutableArray+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Concrete.m"; path = "ConcreteFoundation/Foundation/NSMutableArray+Concrete.m"; sourceTree = "<group>"; };
-		03E322AD17B48AB5001FE707 /* NSObject+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+Concrete.h"; path = "ConcreteFoundation/Foundation/NSObject+Concrete.h"; sourceTree = "<group>"; };
-		03E322AE17B48AB5001FE707 /* NSObject+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Concrete.m"; path = "ConcreteFoundation/Foundation/NSObject+Concrete.m"; sourceTree = "<group>"; };
-		03E322B317B49425001FE707 /* NSDate+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+Concrete.h"; path = "ConcreteFoundation/Foundation/NSDate+Concrete.h"; sourceTree = "<group>"; };
-		03E322B417B49425001FE707 /* NSDate+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+Concrete.m"; path = "ConcreteFoundation/Foundation/NSDate+Concrete.m"; sourceTree = "<group>"; };
-		03E322B617B4BDA0001FE707 /* UIView+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Concrete.h"; path = "ConcreteFoundation/Foundation/UIView+Concrete.h"; sourceTree = "<group>"; };
-		03E322B717B4BDA0001FE707 /* UIView+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Concrete.m"; path = "ConcreteFoundation/Foundation/UIView+Concrete.m"; sourceTree = "<group>"; };
-		03E322B917B4BF97001FE707 /* UIApplication+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIApplication+Concrete.h"; path = "ConcreteFoundation/Foundation/UIApplication+Concrete.h"; sourceTree = "<group>"; };
-		03E322BA17B4BF98001FE707 /* UIApplication+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIApplication+Concrete.m"; path = "ConcreteFoundation/Foundation/UIApplication+Concrete.m"; sourceTree = "<group>"; };
 		03E322BC17B4BFDD001FE707 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		03E40DD11811D91B00F2105D /* UIImage+Concrete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Concrete.h"; path = "ConcreteFoundation/Foundation/UIImage+Concrete.h"; sourceTree = "<group>"; };
-		03E40DD21811D91B00F2105D /* UIImage+Concrete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Concrete.m"; path = "ConcreteFoundation/Foundation/UIImage+Concrete.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,19 +117,46 @@
 		0325F518181F304C009060DD /* Apple Code */ = {
 			isa = PBXGroup;
 			children = (
-				0325F519181F30AA009060DD /* UIImage+ImageEffects.h */,
-				0325F51A181F30AA009060DD /* UIImage+ImageEffects.m */,
+				032CA6DE19300AB40021363E /* UIImage+ImageEffects.h */,
+				032CA6DF19300AB40021363E /* UIImage+ImageEffects.m */,
 			);
 			name = "Apple Code";
+			sourceTree = "<group>";
+		};
+		032CA72B19300BE20021363E /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				032CA72C19300BF60021363E /* NSDate+Concrete.h */,
+				032CA72D19300BF60021363E /* NSDate+Concrete.m */,
+				032CA72E19300BF60021363E /* NSDictionary+Concrete.h */,
+				032CA72F19300BF60021363E /* NSDictionary+Concrete.m */,
+				032CA73019300BF60021363E /* NSMutableArray+Concrete.h */,
+				032CA73119300BF60021363E /* NSMutableArray+Concrete.m */,
+				032CA73219300BF60021363E /* NSObject+Concrete.h */,
+				032CA73319300BF60021363E /* NSObject+Concrete.m */,
+				032CA73419300BF60021363E /* UIAlertView+Concrete.h */,
+				032CA73519300BF60021363E /* UIAlertView+Concrete.m */,
+				032CA73619300BF60021363E /* UIApplication+Concrete.h */,
+				032CA73719300BF60021363E /* UIApplication+Concrete.m */,
+				032CA73819300BF60021363E /* UIImage+Concrete.h */,
+				032CA73919300BF60021363E /* UIImage+Concrete.m */,
+				032CA73A19300BF60021363E /* UINavigationController+Concrete.h */,
+				032CA73B19300BF60021363E /* UINavigationController+Concrete.m */,
+				032CA73C19300BF60021363E /* UITableViewCell+Concrete.h */,
+				032CA73D19300BF60021363E /* UITableViewCell+Concrete.m */,
+				032CA73E19300BF60021363E /* UIView+Concrete.h */,
+				032CA73F19300BF60021363E /* UIView+Concrete.m */,
+			);
+			name = Foundation;
 			sourceTree = "<group>";
 		};
 		036A43C017B7869900F39ED0 /* Container Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				032CA660192F4A580021363E /* CIRootViewController.h */,
-				032CA661192F4A580021363E /* CIRootViewController.m */,
-				036A43C117B786EF00F39ED0 /* CISlideOutTabController.h */,
-				036A43C217B786EF00F39ED0 /* CISlideOutTabController.m */,
+				032CA74A19300C020021363E /* CIRootViewController.h */,
+				032CA74B19300C020021363E /* CIRootViewController.m */,
+				032CA74C19300C020021363E /* CISlideOutTabController.h */,
+				032CA74D19300C020021363E /* CISlideOutTabController.m */,
 			);
 			name = "Container Controllers";
 			sourceTree = "<group>";
@@ -137,10 +164,10 @@
 		039F9BFD17EA4AF40064566A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				039F9BFE17EA4B7E0064566A /* CIActivityIndicatorView.h */,
-				039F9BFF17EA4B7E0064566A /* CIActivityIndicatorView.m */,
-				032CA663192F4F540021363E /* CIPlaceholderTextView.h */,
-				032CA664192F4F540021363E /* CIPlaceholderTextView.m */,
+				032CA75019300C0F0021363E /* CIActivityIndicatorView.h */,
+				032CA75119300C0F0021363E /* CIActivityIndicatorView.m */,
+				032CA75219300C0F0021363E /* CIPlaceholderTextView.h */,
+				032CA75319300C0F0021363E /* CIPlaceholderTextView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -148,8 +175,8 @@
 		03B2970817B855AC00A282CF /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				039F9BB517E500E60064566A /* CILocationService.h */,
-				039F9BB617E500E60064566A /* CILocationService.m */,
+				032CA72819300BCE0021363E /* CILocationService.h */,
+				032CA72919300BCE0021363E /* CILocationService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -188,17 +215,17 @@
 		03E3226717B3D2F0001FE707 /* ConcreteFoundation */ = {
 			isa = PBXGroup;
 			children = (
-				0325F518181F304C009060DD /* Apple Code */,
 				039F9BBB17E501120064566A /* ConcreteMacros.h */,
-				03E3228A17B3D406001FE707 /* Foundation */,
+				0325F518181F304C009060DD /* Apple Code */,
+				032CA72B19300BE20021363E /* Foundation */,
 				03B2970817B855AC00A282CF /* Services */,
 				036A43C017B7869900F39ED0 /* Container Controllers */,
 				039F9BFD17EA4AF40064566A /* Views */,
-				03E3227017B3D2F0001FE707 /* CIAppDelegate.h */,
-				03E3227117B3D2F0001FE707 /* CIAppDelegate.m */,
-				03E3227917B3D2F0001FE707 /* CIMainViewController.h */,
-				03E3227A17B3D2F0001FE707 /* CIMainViewController.m */,
-				03E3227F17B3D2F0001FE707 /* CIMainViewController.xib */,
+				032CA75819300CE40021363E /* CIAppDelegate.h */,
+				032CA75919300CE40021363E /* CIAppDelegate.m */,
+				032CA75B19300D0A0021363E /* CIMainViewController.h */,
+				032CA75C19300D0A0021363E /* CIMainViewController.m */,
+				032CA76119300E2A0021363E /* CIMainViewController.xib */,
 				03E3226817B3D2F0001FE707 /* Supporting Files */,
 			);
 			path = ConcreteFoundation;
@@ -207,43 +234,15 @@
 		03E3226817B3D2F0001FE707 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				03E3226917B3D2F0001FE707 /* ConcreteFoundation-Info.plist */,
-				03E3226A17B3D2F0001FE707 /* InfoPlist.strings */,
-				03E3226D17B3D2F0001FE707 /* main.m */,
-				03E3226F17B3D2F0001FE707 /* ConcreteFoundation-Prefix.pch */,
-				03E3227317B3D2F0001FE707 /* Default.png */,
-				03E3227517B3D2F0001FE707 /* Default@2x.png */,
-				03E3227717B3D2F0001FE707 /* Default-568h@2x.png */,
+				032CA75E19300D390021363E /* InfoPlist.strings */,
+				032CA6D0193003470021363E /* ConcreteFoundation-Prefix.pch */,
+				032CA6CD192FFC800021363E /* ConcreteFoundation-Info.plist */,
+				032CA75619300CBC0021363E /* main.m */,
+				032CA76419300E460021363E /* Default-568h@2x.png */,
+				032CA76519300E460021363E /* Default.png */,
+				032CA76619300E460021363E /* Default@2x.png */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		03E3228A17B3D406001FE707 /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				039F9BB817E500FE0064566A /* NSDictionary+Concrete.h */,
-				039F9BB917E500FE0064566A /* NSDictionary+Concrete.m */,
-				03E322B317B49425001FE707 /* NSDate+Concrete.h */,
-				03E322B417B49425001FE707 /* NSDate+Concrete.m */,
-				03E3228E17B3EF8B001FE707 /* NSMutableArray+Concrete.h */,
-				03E3228F17B3EF8B001FE707 /* NSMutableArray+Concrete.m */,
-				03E322AD17B48AB5001FE707 /* NSObject+Concrete.h */,
-				03E322AE17B48AB5001FE707 /* NSObject+Concrete.m */,
-				03E322B917B4BF97001FE707 /* UIApplication+Concrete.h */,
-				03E322BA17B4BF98001FE707 /* UIApplication+Concrete.m */,
-				03E3228B17B3D4A8001FE707 /* UINavigationController+Concrete.h */,
-				03E3228C17B3D4A8001FE707 /* UINavigationController+Concrete.m */,
-				03E322B617B4BDA0001FE707 /* UIView+Concrete.h */,
-				03E322B717B4BDA0001FE707 /* UIView+Concrete.m */,
-				03559EE917BEEAA400D2D1CC /* UITableViewCell+Concrete.h */,
-				03559EEA17BEEAA500D2D1CC /* UITableViewCell+Concrete.m */,
-				03E40DD11811D91B00F2105D /* UIImage+Concrete.h */,
-				03E40DD21811D91B00F2105D /* UIImage+Concrete.m */,
-				036410F11835672300BAA48F /* UIAlertView+Concrete.h */,
-				036410F21835672300BAA48F /* UIAlertView+Concrete.m */,
-			);
-			name = Foundation;
-			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,11 +297,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03E3226C17B3D2F0001FE707 /* InfoPlist.strings in Resources */,
-				03E3227417B3D2F0001FE707 /* Default.png in Resources */,
-				03E3227617B3D2F0001FE707 /* Default@2x.png in Resources */,
-				03E3227817B3D2F0001FE707 /* Default-568h@2x.png in Resources */,
-				03E3228117B3D2F0001FE707 /* CIMainViewController.xib in Resources */,
+				032CA76319300E2A0021363E /* CIMainViewController.xib in Resources */,
+				032CA76019300D390021363E /* InfoPlist.strings in Resources */,
+				032CA76919300E460021363E /* Default@2x.png in Resources */,
+				032CA76719300E460021363E /* Default-568h@2x.png in Resources */,
+				032CA76819300E460021363E /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,43 +312,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0325F51B181F30AA009060DD /* UIImage+ImageEffects.m in Sources */,
-				03E3226E17B3D2F0001FE707 /* main.m in Sources */,
-				03E3227217B3D2F0001FE707 /* CIAppDelegate.m in Sources */,
-				03E3227B17B3D2F0001FE707 /* CIMainViewController.m in Sources */,
-				03E3228D17B3D4A8001FE707 /* UINavigationController+Concrete.m in Sources */,
-				03E40DD31811D91B00F2105D /* UIImage+Concrete.m in Sources */,
-				032CA662192F4A580021363E /* CIRootViewController.m in Sources */,
-				03E3229017B3EF8B001FE707 /* NSMutableArray+Concrete.m in Sources */,
-				03E322AF17B48AB5001FE707 /* NSObject+Concrete.m in Sources */,
-				03E322B517B49426001FE707 /* NSDate+Concrete.m in Sources */,
-				03E322B817B4BDA1001FE707 /* UIView+Concrete.m in Sources */,
-				03E322BB17B4BF99001FE707 /* UIApplication+Concrete.m in Sources */,
-				036A43C317B786EF00F39ED0 /* CISlideOutTabController.m in Sources */,
-				036410F31835672300BAA48F /* UIAlertView+Concrete.m in Sources */,
-				03559EEB17BEEAA500D2D1CC /* UITableViewCell+Concrete.m in Sources */,
-				032CA665192F4F540021363E /* CIPlaceholderTextView.m in Sources */,
-				039F9BB717E500E60064566A /* CILocationService.m in Sources */,
-				039F9BBA17E500FF0064566A /* NSDictionary+Concrete.m in Sources */,
-				039F9C0017EA4B7E0064566A /* CIActivityIndicatorView.m in Sources */,
+				032CA74E19300C020021363E /* CIRootViewController.m in Sources */,
+				032CA72A19300BCE0021363E /* CILocationService.m in Sources */,
+				032CA74719300BF60021363E /* UINavigationController+Concrete.m in Sources */,
+				032CA75419300C0F0021363E /* CIActivityIndicatorView.m in Sources */,
+				032CA75A19300CE40021363E /* CIAppDelegate.m in Sources */,
+				032CA74519300BF60021363E /* UIApplication+Concrete.m in Sources */,
+				032CA74019300BF60021363E /* NSDate+Concrete.m in Sources */,
+				032CA74419300BF60021363E /* UIAlertView+Concrete.m in Sources */,
+				032CA74619300BF60021363E /* UIImage+Concrete.m in Sources */,
+				032CA75719300CBC0021363E /* main.m in Sources */,
+				032CA74919300BF60021363E /* UIView+Concrete.m in Sources */,
+				032CA6E019300AB40021363E /* UIImage+ImageEffects.m in Sources */,
+				032CA75D19300D0A0021363E /* CIMainViewController.m in Sources */,
+				032CA74119300BF60021363E /* NSDictionary+Concrete.m in Sources */,
+				032CA74219300BF60021363E /* NSMutableArray+Concrete.m in Sources */,
+				032CA74319300BF60021363E /* NSObject+Concrete.m in Sources */,
+				032CA74819300BF60021363E /* UITableViewCell+Concrete.m in Sources */,
+				032CA75519300C0F0021363E /* CIPlaceholderTextView.m in Sources */,
+				032CA74F19300C020021363E /* CISlideOutTabController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		03E3226A17B3D2F0001FE707 /* InfoPlist.strings */ = {
+		032CA75E19300D390021363E /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				03E3226B17B3D2F0001FE707 /* en */,
+				032CA75F19300D390021363E /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		03E3227F17B3D2F0001FE707 /* CIMainViewController.xib */ = {
+		032CA76119300E2A0021363E /* CIMainViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				03E3228017B3D2F0001FE707 /* en */,
+				032CA76219300E2A0021363E /* en */,
 			);
 			name = CIMainViewController.xib;
 			sourceTree = "<group>";
@@ -383,6 +382,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				"INFOPLIST_FILE[sdk=*]" = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -419,8 +419,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ConcreteFoundation/ConcreteFoundation-Prefix.pch";
-				INFOPLIST_FILE = "ConcreteFoundation/ConcreteFoundation-Info.plist";
+				GCC_PREFIX_HEADER = "ConcreteFoundation-Prefix.pch";
+				INFOPLIST_FILE = "ConcreteFoundation-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -430,8 +430,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ConcreteFoundation/ConcreteFoundation-Prefix.pch";
-				INFOPLIST_FILE = "ConcreteFoundation/ConcreteFoundation-Info.plist";
+				GCC_PREFIX_HEADER = "ConcreteFoundation-Prefix.pch";
+				INFOPLIST_FILE = "ConcreteFoundation-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
