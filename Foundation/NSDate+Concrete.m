@@ -101,6 +101,10 @@
 
 - (NSString *)stringWithFormat:(NSString *)format
 {
+    if (format == nil)
+    {
+        format = ISO_8601;
+    }
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:format];
     return [dateFormatter stringFromDate:self];
@@ -108,6 +112,10 @@
 
 + (NSDate *)dateFromString:(NSString *)dateString withFormat:(NSString *)format
 {
+    if (format == nil)
+    {
+        format = ISO_8601;
+    }
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
     [dateFormatter setLocale:[NSLocale systemLocale]];

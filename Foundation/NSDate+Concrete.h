@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Concrete Interactive. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#define ISO_8601 @"yyyy-MM-dd'T'HH:mm:ssZ"
 
 typedef enum {
     CITimeUnitSecond = 0,
