@@ -118,7 +118,7 @@ static NSUInteger timerLoopCount = 0;
 
 + (CIMapDefaultApp)defaultMapsApp
 {
-    return [[NSUserDefaults standardUserDefaults] integerForKey:DEFAULT_MAP_APPS_KEY];
+    return (CIMapDefaultApp)[[NSUserDefaults standardUserDefaults] integerForKey:DEFAULT_MAP_APPS_KEY];
 }
 
 + (void)setDefaultMapsApp:(CIMapDefaultApp)defaultApp
