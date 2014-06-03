@@ -30,54 +30,54 @@
          thenPushViewControllers:(NSArray *)viewControllersToPush
             withAnimationOptions:(UINavigationControllerAnimationOptions)animationOptions
 {
-    UINavigationControllerAnimationOptions curveOption = animationOptions & 3;
-    UINavigationControllerAnimationOptions transitionOption = animationOptions ^ curveOption;
+//    UINavigationControllerAnimationOptions curveOption = animationOptions & 3;
+//    UINavigationControllerAnimationOptions transitionOption = animationOptions ^ curveOption;
     NSArray* poppedViewControllers = nil;
-    if (transitionOption & UINavigationControllerAnimationOptionTransitionSlideInOut)
-    {
-        BOOL slideIn = transitionOption & UINavigationControllerAnimationOptionTransitionSlideIn;
-        BOOL slideOut = transitionOption & UINavigationControllerAnimationOptionTransitionSlideOut;
-        if (slideIn && slideOut)
-        {
-            poppedViewControllers = [self popToViewController:stopAtViewController animated:YES];
-            for (UIViewController* viewController in viewControllersToPush)
-            {
-                if ([viewController isKindOfClass:[UIViewController class]])
-                {
-                    [self pushViewController:viewController animated:YES];
-                }
-            }
-            return poppedViewControllers;
-        } else if (slideIn)
-        {
-            NSMutableArray* viewControllers = [self.viewControllers mutableCopy];
-            if ([viewControllers lastObject] != stopAtViewController && [viewControllers containsObject:stopAtViewController])
-            {
-                NSUInteger loc = [viewControllers indexOfObject:stopAtViewController] + 1;
-                NSUInteger len = [viewControllers count] - 1 - loc;
-                NSIndexSet* indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(loc, len)];
-                poppedViewControllers = [viewControllers objectsAtIndexes:indexSet];
-                [viewControllers removeObjectsAtIndexes:indexSet];
-            }
-            [self setViewControllers:[viewControllers arrayByAddingObjectsFromArray:viewControllersToPush] animated:YES];
-            return poppedViewControllers;
-        } else if (slideOut)
-        {
-            NSMutableArray* viewControllers = [self.viewControllers mutableCopy];
-            if ([viewControllers lastObject] != stopAtViewController && [viewControllers containsObject:stopAtViewController])
-            {
-                NSUInteger loc = [viewControllers indexOfObject:stopAtViewController] + 1;
-                NSUInteger len = [viewControllers count] - 1 - loc;
-                NSIndexSet* indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(loc, len)];
-                poppedViewControllers = [viewControllers objectsAtIndexes:indexSet];
-                [viewControllers removeObjectsAtIndexes:indexSet];
-            }
-            NSArray* endViewControllers = [viewControllers arrayByAddingObjectsFromArray:viewControllersToPush];
-            [self setViewControllers:[endViewControllers arrayByAddingObjectsFromArray:poppedViewControllers] animated:NO];
-            [self setViewControllers:endViewControllers animated:YES];
-            return poppedViewControllers;
-        }
-    }
+//    if (transitionOption & UINavigationControllerAnimationOptionTransitionSlideInOut)
+//    {
+//        BOOL slideIn = transitionOption & UINavigationControllerAnimationOptionTransitionSlideIn;
+//        BOOL slideOut = transitionOption & UINavigationControllerAnimationOptionTransitionSlideOut;
+//        if (slideIn && slideOut)
+//        {
+//            poppedViewControllers = [self popToViewController:stopAtViewController animated:YES];
+//            for (UIViewController* viewController in viewControllersToPush)
+//            {
+//                if ([viewController isKindOfClass:[UIViewController class]])
+//                {
+//                    [self pushViewController:viewController animated:YES];
+//                }
+//            }
+//            return poppedViewControllers;
+//        } else if (slideIn)
+//        {
+//            NSMutableArray* viewControllers = [self.viewControllers mutableCopy];
+//            if ([viewControllers lastObject] != stopAtViewController && [viewControllers containsObject:stopAtViewController])
+//            {
+//                NSUInteger loc = [viewControllers indexOfObject:stopAtViewController] + 1;
+//                NSUInteger len = [viewControllers count] - 1 - loc;
+//                NSIndexSet* indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(loc, len)];
+//                poppedViewControllers = [viewControllers objectsAtIndexes:indexSet];
+//                [viewControllers removeObjectsAtIndexes:indexSet];
+//            }
+//            [self setViewControllers:[viewControllers arrayByAddingObjectsFromArray:viewControllersToPush] animated:YES];
+//            return poppedViewControllers;
+//        } else if (slideOut)
+//        {
+//            NSMutableArray* viewControllers = [self.viewControllers mutableCopy];
+//            if ([viewControllers lastObject] != stopAtViewController && [viewControllers containsObject:stopAtViewController])
+//            {
+//                NSUInteger loc = [viewControllers indexOfObject:stopAtViewController] + 1;
+//                NSUInteger len = [viewControllers count] - 1 - loc;
+//                NSIndexSet* indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(loc, len)];
+//                poppedViewControllers = [viewControllers objectsAtIndexes:indexSet];
+//                [viewControllers removeObjectsAtIndexes:indexSet];
+//            }
+//            NSArray* endViewControllers = [viewControllers arrayByAddingObjectsFromArray:viewControllersToPush];
+//            [self setViewControllers:[endViewControllers arrayByAddingObjectsFromArray:poppedViewControllers] animated:NO];
+//            [self setViewControllers:endViewControllers animated:YES];
+//            return poppedViewControllers;
+//        }
+//    }
     UIViewAnimationOptions viewAnimationOptions = (animationOptions & 127) << 16;
     NSMutableArray* viewControllers = [self.viewControllers mutableCopy];
     if ([viewControllers lastObject] != stopAtViewController && [viewControllers containsObject:stopAtViewController])

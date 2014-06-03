@@ -38,10 +38,11 @@
             [hudView addSubview:self.activityIndicatorView];
             [self.activityIndicatorView startAnimating];
             
-            self.captionLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 115, 130, 22)];
+            self.captionLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 90, 150, 70)];
             self.captionLabel.backgroundColor = [UIColor clearColor];
             self.captionLabel.textColor = [UIColor whiteColor];
             self.captionLabel.adjustsFontSizeToFitWidth = YES;
+            self.captionLabel.numberOfLines = 3;
             self.captionLabel.textAlignment = NSTextAlignmentCenter;
             self.captionLabel.text = text;
             [hudView addSubview:self.captionLabel];
