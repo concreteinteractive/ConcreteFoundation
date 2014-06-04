@@ -1,5 +1,5 @@
 //
-//  CILog.m
+//  CILogger.m
 //  ConcreteFoundation
 //
 //  Created by Joshua Dudley on 5/27/14.
