@@ -7,6 +7,7 @@
 //
 
 #import "CISlideOutTabController.h"
+#import "CILogger.h"
 
 #define SLIDE_OUT_ANIMATION_DURATION 0.3
 #define DEFAULT_SLIDE_OUT_WIDTH      245.0
@@ -193,7 +194,7 @@
         [self addChildViewController:viewController];
         [viewController didMoveToParentViewController:self];
     } else {
-        NSLog(@"[CISlideOutTabController addViewController:] rejected object:\n%@", [viewController description]);
+        CILog(@"[CISlideOutTabController addViewController:] rejected object:\n%@", [viewController description]);
     }
 }
 

@@ -8,6 +8,7 @@
 
 #import "CILocationService.h"
 #import "NSObject+Concrete.h"
+#import "CILogger.h"
 
 #define DEFAULT_MAP_APPS_KEY @"Default Maps App"
 
@@ -89,7 +90,7 @@ static NSUInteger timerLoopCount = 0;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    NSLog(@"User location updated");
+    CILog(@"User location updated");
     CLLocation* location = [locations lastObject];
     //NSDate* eventDate = location.timestamp;
     //NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];

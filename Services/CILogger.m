@@ -8,12 +8,20 @@
 
 #import "CILogger.h"
 #import "NSDate+Concrete.h"
+#import "NSObject+Concrete.h"
 
 static BOOL _CILogOn = NO;
 static BOOL _CIForwardLogToFile = NO;
-static NSMutableArray* _CIFileLogWriteQueue;
 static NSString* _CILogFileDirectory;
 static NSString* _CICurrentLogFile;
+static CILogger* _loggerInstance;
+
+@interface CILogger()
+
+@property (nonatomic, strong) NSFileHandle* fileHandle;
+@property (nonatomic, strong) NSOperationQueue* operationQueue;
+
+@end
 
 @implementation CILogger
 
@@ -25,39 +33,45 @@ static NSString* _CICurrentLogFile;
     
     // Setup from environment variables
 	char* envLogOn = getenv("CILogOn");
-	if (strcmp(envLogOn == NULL ? "" : envLogOn, "NO") != 0)
+    // Defaults to YES if no environment variable is set
+	if (strcasecmp(envLogOn == NULL ? "YES" : envLogOn, "NO") != 0 &&
+        strcasecmp(envLogOn == NULL ? "TRUE" : envLogOn, "FALSE") != 0 &&
+        strcasecmp(envLogOn == NULL ? "1" : envLogOn, "0") != 0)
     {
 		[CILogger setLogOn:YES];
     }
 	char* envForwardingOn = getenv("CIForwardLogToFile");
-	if (strcmp(envForwardingOn == NULL ? "" : envForwardingOn, "NO") != 0)
+    // Defaults to NO if no environment variable is set
+	if (strcasecmp(envForwardingOn == NULL ? "NO" : envForwardingOn, "NO") != 0 &&
+        strcasecmp(envForwardingOn == NULL ? "FALSE" : envForwardingOn, "FALSE") != 0 &&
+        strcasecmp(envForwardingOn == NULL ? "0" : envForwardingOn, "0") != 0)
     {
 		[CILogger setForwardLogToFileOn:YES];
     }
     
-    // Setup file log buffer
-    _CIFileLogWriteQueue = [NSMutableArray arrayWithCapacity:50];
-    
     // Create log file directory if it doesn't exist
-    if (![[NSFileManager defaultManager] fileExistsAtPath:_CILogFileDirectory])
-    {
-        NSError* error = nil;
-        [[NSFileManager defaultManager] createDirectoryAtPath:_CILogFileDirectory withIntermediateDirectories:YES attributes:nil error:&error];
-        if (error)
-        {
-            if (_CILogOn)
-            {
-                CILog(@"%@", error);
-#ifdef DEBUG
-            } else {
-                NSLog(@"%@", error);
-#endif
-            }
-        }
-    }
+    [CILogger createDirectoryAtPath:_CILogFileDirectory];
+    
+    // Create backup file directory if it doesn't exist
+    [CILogger createDirectoryAtPath:[CILogger backupFileDirectoryPath]];
     
     // Clear any log file present and create a new one
     [[NSFileManager defaultManager] createFileAtPath:_CICurrentLogFile contents:nil attributes:nil];
+}
+
++ (instancetype)sharedInstance
+{
+    if (_loggerInstance == nil)
+    {
+        _loggerInstance = [super sharedInstance];
+    }
+    return _loggerInstance;
+}
+
++ (void)purgeSharedInstance
+{
+    _loggerInstance = nil;
+    [super purgeSharedInstance];
 }
 
 + (void)logWithSourceFile:(char *)sourceFile
@@ -65,6 +79,12 @@ static NSString* _CICurrentLogFile;
             forwardToFile:(BOOL)forwardTofFile
                    format:(NSString *)format, ...
 {
+#ifndef DEBUG
+    if (!_CIForwardLogToFile && !forwardTofFile)
+    {
+        return;
+    }
+#endif
 	if(_CILogOn == NO)
     {
 		return;
@@ -78,7 +98,7 @@ static NSString* _CICurrentLogFile;
 	print = [[NSString alloc] initWithFormat:format arguments:ap];
 	va_end(ap);
     
-    NSString* logLine = [NSString stringWithFormat:@"\n%s:%d %@", [[file lastPathComponent] UTF8String], lineNumber, print];
+    NSString* logLine = [NSString stringWithFormat:@"%s:%d\n%@\n\n", [[file lastPathComponent] UTF8String], lineNumber, print];
     
 #ifdef DEBUG
     //NSLog handles synchronization issues
@@ -87,7 +107,20 @@ static NSString* _CICurrentLogFile;
     
     if (_CIForwardLogToFile || forwardTofFile)
     {
-        [_CIFileLogWriteQueue addObject:logLine];
+        logLine = [NSString stringWithFormat:@"%@ %@ %@", [NSProcessInfo processInfo].processName, [[NSDate date] stringWithFormat:@"yyyy-MM-dd HH:mm:ss.SSS"], logLine];
+        
+        if ([CILogger sharedInstance].fileHandle == nil)
+        {
+            [CILogger sharedInstance].operationQueue = [[NSOperationQueue alloc] init];
+            [[CILogger sharedInstance].operationQueue setMaxConcurrentOperationCount:1];
+            [[CILogger sharedInstance].operationQueue addOperationWithBlock:^{
+                [CILogger sharedInstance].fileHandle = [NSFileHandle fileHandleForWritingAtPath:_CICurrentLogFile];
+                [[CILogger sharedInstance].fileHandle seekToEndOfFile];
+            }];
+        }
+        [[CILogger sharedInstance].operationQueue addOperationWithBlock:^{
+            [[CILogger sharedInstance].fileHandle writeData:[logLine dataUsingEncoding:NSUTF8StringEncoding]];
+        }];
     }
 	
 	return;
@@ -103,100 +136,52 @@ static NSString* _CICurrentLogFile;
 	_CIForwardLogToFile = forwardOn;
 }
 
-+ (void)saveToFileFromQueue
-{
-    NSArray* remainingLines = [NSArray arrayWithArray:_CIFileLogWriteQueue];
-    [_CIFileLogWriteQueue removeAllObjects];
-    NSFileHandle* fileHandle = [NSFileHandle fileHandleForUpdatingAtPath:_CICurrentLogFile];
-    [fileHandle seekToEndOfFile];
-    for (NSString* logLine in remainingLines)
-    {
-        [fileHandle writeData:[logLine dataUsingEncoding:NSUTF8StringEncoding]];
-    }
-    [fileHandle closeFile];
-}
-
 + (void)backupLogFile
 {
-    [self saveToFileFromQueue];
-    NSString* backupPath = [_CILogFileDirectory stringByAppendingFormat:@"log_%@.txt", [[NSDate date] stringWithFormat:@"yyyy-MM-dd--HH-mm-ss"]];
-    NSError* error = nil;
-    [[NSFileManager defaultManager] moveItemAtPath:_CICurrentLogFile toPath:backupPath error:&error];
-    if (error)
-    {
-        if (_CILogOn)
+    [[CILogger sharedInstance].operationQueue addOperationWithBlock:^{
+        [[CILogger sharedInstance].fileHandle closeFile];
+        NSString* backupPath = [[CILogger backupFileDirectoryPath] stringByAppendingFormat:@"log_%@.txt", [[NSDate date] stringWithFormat:@"yyyy-MM-dd--HH-mm-ss.SSS"]];
+        NSError* error = nil;
+        [[NSFileManager defaultManager] copyItemAtPath:_CICurrentLogFile toPath:backupPath error:&error];
+        if (error)
         {
-            CILog(@"%@", error);
+            if (_CILogOn)
+            {
+                CILog(@"%@", error);
 #ifdef DEBUG
-        } else {
-            NSLog(@"%@", error);
+            } else {
+                NSLog(@"%@", error);
 #endif
+            }
+        }
+        [CILogger sharedInstance].fileHandle = [NSFileHandle fileHandleForWritingAtPath:_CICurrentLogFile];
+        [[CILogger sharedInstance].fileHandle seekToEndOfFile];
+    }];
+}
+
++ (NSString *)backupFileDirectoryPath
+{
+    return [(NSString *)[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingString:@"/SavedLogs/"];
+}
+
++ (void)createDirectoryAtPath:(NSString *)path
+{
+    if (![[NSFileManager defaultManager] fileExistsAtPath:path])
+    {
+        NSError* error = nil;
+        [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&error];
+        if (error)
+        {
+            if (_CILogOn)
+            {
+                CILog(@"%@", error);
+#ifdef DEBUG
+            } else {
+                NSLog(@"%@", error);
+#endif
+            }
         }
     }
 }
-
-
-
-
-//- (NSString *)rootDirectory
-//{
-//    if (_rootDirectory == nil)
-//    {
-//        self.rootDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-//    }
-//    return _rootDirectory;
-//}
-//
-//- (BOOL)fileExistsAtPath:(NSString *)path
-//{
-//    return [[NSFileManager defaultManager] fileExistsAtPath:path];
-//}
-//
-//- (BOOL)deleteFileAt:(NSString *)path
-//{
-//    if ([[NSFileManager defaultManager] fileExistsAtPath:path])
-//    {
-//        NSError* error = nil;
-//        BOOL result = [[NSFileManager defaultManager] removeItemAtPath:path error:&error];
-//#ifdef DEBUG
-//        if (error)
-//        {
-//            NSLog(@"%@", error);
-//        }
-//#endif
-//        return result;
-//    }
-//    return TRUE;
-//}
-//
-//- (void)backupFileAtPath:(NSString *)path
-//{
-//    NSString* file = [[path componentsSeparatedByString:@"/"] lastObject];
-//    NSString* fileName = [[file componentsSeparatedByString:@"."] firstObject];
-//    NSString* extention = [[file componentsSeparatedByString:@"."] lastObject];
-//    SKLoggedInCamperArray* camperArray = [SKLoggedInCamperArray sharedInstance];
-//    for (SKCamper* camper in camperArray)
-//    {
-//        int i = 0;
-//        NSString* backupPath = nil;
-//        do {
-//            i++;
-//            backupPath = [NSString stringWithFormat:@"%@/%@~camper_%@_file_%d.%@", [[SKDocumentManager sharedInstance] getBackupDirectory], fileName, camper.idNumber, i, extention];
-//        } while ([[NSFileManager defaultManager] fileExistsAtPath:backupPath]);
-//        NSError* error = nil;
-//        if (camper == [camperArray lastCamper])
-//        {
-//            [[NSFileManager defaultManager] moveItemAtPath:path toPath:backupPath error:&error];
-//        } else {
-//            [[NSFileManager defaultManager] copyItemAtPath:path toPath:backupPath error:&error];
-//        }
-//#ifdef DEBUG
-//        if (error)
-//        {
-//            NSLog(@"%@", error);
-//        }
-//#endif
-//    }
-//}
 
 @end
