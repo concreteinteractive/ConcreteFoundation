@@ -280,14 +280,14 @@
 
 #pragma mark - Grayscale
 
-- (UIImage *)grayscaleImage:(UIImage *)initialImage
+- (UIImage *)grayscaleImage
 {
     const int RED = 1;
     const int GREEN = 2;
     const int BLUE = 3;
     
     // Create image rectangle with current image width/height
-    CGRect imageRect = CGRectMake(0, 0, initialImage.size.width * initialImage.scale, initialImage.size.height * initialImage.scale);
+    CGRect imageRect = CGRectMake(0, 0, self.size.width * self.scale, self.size.height * self.scale);
     
     int width = imageRect.size.width;
     int height = imageRect.size.height;
@@ -305,7 +305,7 @@
                                                  kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedLast);
     
     // paint the bitmap to our context which will fill in the pixels array
-    CGContextDrawImage(context, CGRectMake(0, 0, width, height), [initialImage CGImage]);
+    CGContextDrawImage(context, CGRectMake(0, 0, width, height), [self CGImage]);
     
     for(int y = 0; y < height; y++)
     {
@@ -334,7 +334,7 @@
     
     // make a new UIImage to return
     UIImage *resultUIImage = [UIImage imageWithCGImage:image
-                                                 scale:initialImage.scale
+                                                 scale:self.scale
                                            orientation:UIImageOrientationUp];
     
     return resultUIImage;

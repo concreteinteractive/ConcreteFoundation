@@ -34,7 +34,7 @@
                     interpolationQuality:(CGInterpolationQuality)quality;
 
 #pragma mark - Grayscale
-- (UIImage *)grayscaleImage:(UIImage *)initialImage;
+- (UIImage *)grayscaleImage;
 
 #pragma mark - Alpha support
 - (BOOL)hasAlpha;
