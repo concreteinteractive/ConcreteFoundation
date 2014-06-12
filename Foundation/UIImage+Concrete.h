@@ -33,16 +33,15 @@
                                   bounds:(CGSize)bounds
                     interpolationQuality:(CGInterpolationQuality)quality;
 
+#pragma mark - Grayscale
+- (UIImage *)grayscaleImage:(UIImage *)initialImage;
 
 #pragma mark - Alpha support
-
 - (BOOL)hasAlpha;
 - (UIImage *)imageWithAlpha;
 - (UIImage *)transparentBorderImage:(NSUInteger)borderSize;
 
-
 #pragma mark - Rounded corners
-
 - (UIImage *)roundedCornerImage:(NSInteger)cornerSize borderSize:(NSInteger)borderSize;
 
 @end
