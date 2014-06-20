@@ -9,6 +9,9 @@
 #import "CILogger.h"
 #import "NSDate+Concrete.h"
 #import "NSObject+Concrete.h"
+#import "UIDevice+Concrete.h"
+
+#import <sys/sysctl.h>
 
 static BOOL _CILogOn = NO;
 static BOOL _CIForwardLogToFile = NO;
@@ -107,7 +110,7 @@ static CILogger* _loggerInstance;
     
     if (_CIForwardLogToFile || forwardTofFile)
     {
-        logLine = [NSString stringWithFormat:@"%@ %@ %@", [NSProcessInfo processInfo].processName, [[NSDate date] stringWithFormat:@"yyyy-MM-dd HH:mm:ss.SSS"], logLine];
+        logLine = [NSString stringWithFormat:@"%@ %@", [[NSDate date] stringWithFormat:@"yyyy-MM-dd HH:mm:ss.SSS"], logLine];
         
         if ([CILogger sharedInstance].fileHandle == nil)
         {
@@ -116,6 +119,14 @@ static CILogger* _loggerInstance;
             [[CILogger sharedInstance].operationQueue addOperationWithBlock:^{
                 [CILogger sharedInstance].fileHandle = [NSFileHandle fileHandleForWritingAtPath:_CICurrentLogFile];
                 [[CILogger sharedInstance].fileHandle seekToEndOfFile];
+            }];
+            NSString* systemInfo = [NSString stringWithFormat:@"%@ Version %@\n%@\niOS %@\n\n",
+                                    [NSProcessInfo processInfo].processName,
+                                    [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
+                                    [[UIDevice currentDevice] userReadablePlatform],
+                                    [NSProcessInfo processInfo].operatingSystemVersionString];
+            [[CILogger sharedInstance].operationQueue addOperationWithBlock:^{
+                [[CILogger sharedInstance].fileHandle writeData:[systemInfo dataUsingEncoding:NSUTF8StringEncoding]];
             }];
         }
         [[CILogger sharedInstance].operationQueue addOperationWithBlock:^{
