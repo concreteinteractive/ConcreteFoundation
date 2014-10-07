@@ -25,30 +25,9 @@
     return nil;
 }
 
-- (NSArray *)delegates
-{
-    return [super delegates];
-}
-
-- (void)addDelegate:(id<CIRootViewControllerDelegate>)delegate
-{
-    [super addDelegate:delegate];
-}
-
-- (void)removeDelegate:(id<CIRootViewControllerDelegate>)delegate
-{
-    [super removeDelegate:delegate];
-}
-
 - (void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion
 {
-    for (id<CIRootViewControllerDelegate> delegate in self.delegates)
-    {
-        if ([delegate respondsToSelector:@selector(dismissViewControllerAnimated:completion:)])
-        {
-            [delegate dismissViewControllerAnimated:flag completion:completion];
-        }
-    }
+    [self.delegate dismissViewControllerAnimated:flag completion:completion];
 }
 
 @end

@@ -16,10 +16,8 @@
 
 @interface CIRootViewController : UIViewController
 
-@property (nonatomic, readonly)NSArray* delegates;
+@property (nonatomic, weak) id<CIRootViewControllerDelegate> delegate;
 
 + (CIRootViewController *)sharedInstance;
-- (void)addDelegate:(id<CIRootViewControllerDelegate>)delegate;
-- (void)removeDelegate:(id<CIRootViewControllerDelegate>)delegate;
 
 @end
