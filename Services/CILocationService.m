@@ -80,7 +80,7 @@ static NSUInteger timerLoopCount = 0;
 
 - (BOOL) serviceIsEnabled
 {
-    return ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized);
+    return ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways);
 }
 
 - (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation

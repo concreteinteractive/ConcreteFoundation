@@ -103,7 +103,8 @@ typedef enum {
 - (NSInteger)second;
 - (NSInteger)day;
 - (NSInteger)month;
-- (NSInteger)week;
+- (NSInteger)weekOfMonth;
+- (NSInteger)weekOfYear;
 - (NSInteger)weekday;
 - (NSInteger)firstDayOfWeek;
 - (NSInteger)lastDayOfWeek;
