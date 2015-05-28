@@ -10,7 +10,7 @@
 #import "NSDate+Concrete.h"
 #import "NSObject+Concrete.h"
 #import "UIDevice+Concrete.h"
-
+#import "SKDocumentManager.h"
 #import <sys/sysctl.h>
 
 static BOOL _CILogOn = NO;
@@ -125,16 +125,50 @@ static CILogger* _loggerInstance;
                                     [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
                                     [[UIDevice currentDevice] userReadablePlatform],
                                     [NSProcessInfo processInfo].operatingSystemVersionString];
+            [self saveFileUsingSK:systemInfo];
             [[CILogger sharedInstance].operationQueue addOperationWithBlock:^{
                 [[CILogger sharedInstance].fileHandle writeData:[systemInfo dataUsingEncoding:NSUTF8StringEncoding]];
             }];
         }
+        
         [[CILogger sharedInstance].operationQueue addOperationWithBlock:^{
             [[CILogger sharedInstance].fileHandle writeData:[logLine dataUsingEncoding:NSUTF8StringEncoding]];
         }];
     }
-	
+	[self saveFileUsingSK:logLine];
 	return;
+}
+
++ (void)saveFileUsingSK:(NSString *)newLine
+{
+    SKDocumentManager* dm = [SKDocumentManager getInstance];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    NSDate *now = [[NSDate alloc] init];
+    NSString *theDate = [dateFormat stringFromDate:now];
+    NSString *path = [NSString stringWithFormat:@"%@%@.txt",[dm getLogDirectory],theDate];
+    NSMutableDictionary *dic = nil;
+    if ([dm fileExistsAtPath:path]) {
+        dic = [[[SKDocumentManager getInstance] openFileAtPath:path] mutableCopy];
+    } else {
+        [dm createDirectoryAt:[dm getLogDirectory]];
+        dic =  [[NSMutableDictionary alloc] init];
+        [dic setObject:@"string" forKey:@"format"];
+        [dic setObject:[NSString stringWithFormat:@"New Log File - %@\n",theDate] forKey:@"data"];
+    }
+    [dic setObject:[NSString stringWithFormat:@"%@%@\n",[dic objectForKey:@"data"],newLine] forKey:@"data"];
+    
+    NSMutableData *data = [[NSMutableData alloc] init];
+    NSKeyedArchiver *archiver = [[NSKeyedArchiver alloc] initForWritingWithMutableData:data];
+    for (id key in dic)
+    {
+        [archiver encodeObject:[dic objectForKey:key] forKey:key];
+    }
+    [archiver finishEncoding];
+    NSError *error;
+    [data writeToFile:path options:0 error:&error];
+    //[dm saveDictionary:dic toFilePath:path];
+    
 }
 
 + (void)setLogOn:(BOOL)logOn
