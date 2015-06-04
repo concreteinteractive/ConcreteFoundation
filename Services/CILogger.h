@@ -18,6 +18,7 @@
 
 + (void)setLogOn:(BOOL)logOn;
 + (void)setForwardLogToFileOn:(BOOL)forwardOn;
++ (void)clearLogs;
 + (void)backupLogFile;
 + (NSString *)backupFileDirectoryPath;
 

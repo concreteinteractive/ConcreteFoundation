@@ -32,8 +32,8 @@ static CILogger* _loggerInstance;
 {
     // Set log file directory and current log file names
     _CILogFileDirectory = [(NSString *)[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingString:@"/LogFiles/"];
-    _CICurrentLogFile = [_CILogFileDirectory stringByAppendingString:@"CurrentLogFile.txt"];
-    
+    _CICurrentLogFile = [_CILogFileDirectory stringByAppendingFormat:@"log_%@.txt", [[NSDate date] stringWithFormat:@"yyyy-MM-dd"]];
+
     // Setup from environment variables
 	char* envLogOn = getenv("CILogOn");
     // Defaults to YES if no environment variable is set
@@ -57,9 +57,6 @@ static CILogger* _loggerInstance;
     
     // Create backup file directory if it doesn't exist
     [CILogger createDirectoryAtPath:[CILogger backupFileDirectoryPath]];
-    
-    // Clear any log file present and create a new one
-    [[NSFileManager defaultManager] createFileAtPath:_CICurrentLogFile contents:nil attributes:nil];
 }
 
 + (instancetype)sharedInstance
@@ -75,6 +72,28 @@ static CILogger* _loggerInstance;
 {
     _loggerInstance = nil;
     [super purgeSharedInstance];
+}
+
++ (void)clearLogs
+{
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSError *error = nil;
+
+    // Clear log files
+    for (NSString *file in [fm contentsOfDirectoryAtPath:_CILogFileDirectory error:&error]) {
+        BOOL success = [fm removeItemAtPath:[NSString stringWithFormat:@"%@%@", _CILogFileDirectory, file] error:&error];
+        if (!success || error) {
+            // it failed.
+        }
+    }
+
+    // Clear backup files
+    for (NSString *file in [fm contentsOfDirectoryAtPath:[CILogger backupFileDirectoryPath] error:&error]) {
+        BOOL success = [fm removeItemAtPath:[NSString stringWithFormat:@"%@%@", [CILogger backupFileDirectoryPath], file] error:&error];
+        if (!success || error) {
+            // it failed.
+        }
+    }
 }
 
 + (void)logWithSourceFile:(char *)sourceFile
@@ -114,6 +133,10 @@ static CILogger* _loggerInstance;
         
         if ([CILogger sharedInstance].fileHandle == nil)
         {
+            if (_CIForwardLogToFile && ![[NSFileManager defaultManager] fileExistsAtPath:_CICurrentLogFile]) {
+                [[NSFileManager defaultManager] createFileAtPath:_CICurrentLogFile contents:nil attributes:nil];
+            }
+
             [CILogger sharedInstance].operationQueue = [[NSOperationQueue alloc] init];
             [[CILogger sharedInstance].operationQueue setMaxConcurrentOperationCount:1];
             [[CILogger sharedInstance].operationQueue addOperationWithBlock:^{
