@@ -12,22 +12,6 @@
 
 static NSInteger networkOperationCount = 0;
 
-+ (UIViewController *)rootViewController
-{
-    return [UIApplication sharedApplication].keyWindow.rootViewController;
-}
-
-+ (void)setRootViewController:(UIViewController *)viewController
-{
-    [UIApplication sharedApplication].keyWindow.rootViewController = viewController;
-}
-
-+ (void)setRootViewControllerFromStoryboard:(NSString *)storyboardName withViewControllerId:(NSString *)viewControllerId
-{
-    UIViewController* viewController = [UIApplication viewControllerFromStoryboard:storyboardName withViewControllerId:viewControllerId];
-    [UIApplication setRootViewController:viewController];
-}
-
 + (id)viewControllerFromStoryboard:(NSString *)storyboardName withViewControllerId:(NSString *)viewControllerId
 {
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:storyboardName bundle:nil];

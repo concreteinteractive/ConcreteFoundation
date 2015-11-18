@@ -10,8 +10,6 @@
 
 @interface UIApplication (Concrete)
 
-+ (UIViewController *)rootViewController;
-+ (void)setRootViewController:(UIViewController *)viewController;
 + (void)setRootViewControllerFromStoryboard:(NSString *)storyboardName withViewControllerId:(NSString *)viewControllerId;
 + (id)viewControllerFromStoryboard:(NSString *)storyboardName withViewControllerId:(NSString *)viewControllerId;
 
