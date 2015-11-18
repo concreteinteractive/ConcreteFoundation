@@ -24,27 +24,27 @@
 + (NSString *)shortStringForTimeInterval:(NSTimeInterval)interval withMaxTimeBlock:(CITimeUnit)maxTimeBlock
 {
     NSString* result = nil;
-    if (abs(interval) < CITimeUnitMinute || maxTimeBlock == CITimeUnitSecond)
+    if (fabs(interval) < CITimeUnitMinute || maxTimeBlock == CITimeUnitSecond)
     {
-        result = [NSString stringWithFormat:@"%ds", abs(interval)];
-    } else if (abs(interval) < CITimeUnitHour || maxTimeBlock == CITimeUnitMinute)
+        result = [NSString stringWithFormat:@"%lds", (long)fabs(interval)];
+    } else if (fabs(interval) < CITimeUnitHour || maxTimeBlock == CITimeUnitMinute)
     {
-        result = [NSString stringWithFormat:@"%dm", abs(interval/CITimeUnitMinute)];
-    } else if (abs(interval) < CITimeUnitDay || maxTimeBlock == CITimeUnitHour)
+        result = [NSString stringWithFormat:@"%ldm", (long)fabs(interval/CITimeUnitMinute)];
+    } else if (fabs(interval) < CITimeUnitDay || maxTimeBlock == CITimeUnitHour)
     {
-        result = [NSString stringWithFormat:@"%dh", abs(interval/CITimeUnitHour)];
-    } else if (abs(interval) < CITimeUnitWeek || maxTimeBlock == CITimeUnitDay)
+        result = [NSString stringWithFormat:@"%ldh", (long)fabs(interval/CITimeUnitHour)];
+    } else if (fabs(interval) < CITimeUnitWeek || maxTimeBlock == CITimeUnitDay)
     {
-        result = [NSString stringWithFormat:@"%dd", abs(interval/CITimeUnitDay)];
-    } else if (abs(interval) < CITimeUnitMonth || maxTimeBlock == CITimeUnitWeek)
+        result = [NSString stringWithFormat:@"%ldd", (long)fabs(interval/CITimeUnitDay)];
+    } else if (fabs(interval) < CITimeUnitMonth || maxTimeBlock == CITimeUnitWeek)
     {
-        result = [NSString stringWithFormat:@"%dw", abs(interval/CITimeUnitWeek)];
-    } else if (abs(interval) < CITimeUnitYear || maxTimeBlock == CITimeUnitMonth)
+        result = [NSString stringWithFormat:@"%ldw", (long)fabs(interval/CITimeUnitWeek)];
+    } else if (fabs(interval) < CITimeUnitYear || maxTimeBlock == CITimeUnitMonth)
     {
-        result = [NSString stringWithFormat:@"%dM", abs(interval/CITimeUnitMonth)];
+        result = [NSString stringWithFormat:@"%ldM", (long)fabs(interval/CITimeUnitMonth)];
     } else
     {
-        result = [NSString stringWithFormat:@"%dy", abs(interval/CITimeUnitYear)];
+        result = [NSString stringWithFormat:@"%ldy", (long)fabs(interval/CITimeUnitYear)];
     }
     if (interval < 0) {
         result = [@"-" stringByAppendingString:result];
@@ -61,33 +61,33 @@
 {
     int number = 0;
     NSString* result = nil;
-    if (abs(interval) < CITimeUnitMinute || maxTimeBlock == CITimeUnitSecond)
+    if (fabs(interval) < CITimeUnitMinute || maxTimeBlock == CITimeUnitSecond)
     {
-        number = abs(interval);
+        number = fabs(interval);
         result = [NSString stringWithFormat:@"%d second", number];
-    } else if (abs(interval) < CITimeUnitHour || maxTimeBlock == CITimeUnitMinute)
+    } else if (fabs(interval) < CITimeUnitHour || maxTimeBlock == CITimeUnitMinute)
     {
-        number = abs(interval/CITimeUnitMinute);
+        number = fabs(interval/CITimeUnitMinute);
         result = [NSString stringWithFormat:@"%d minute", number];
-    } else if (abs(interval) < CITimeUnitDay || maxTimeBlock == CITimeUnitHour)
+    } else if (fabs(interval) < CITimeUnitDay || maxTimeBlock == CITimeUnitHour)
     {
-        number = abs(interval/CITimeUnitHour);
+        number = fabs(interval/CITimeUnitHour);
         result = [NSString stringWithFormat:@"%d hour", number];
-    } else if (abs(interval) < CITimeUnitWeek || maxTimeBlock == CITimeUnitDay)
+    } else if (fabs(interval) < CITimeUnitWeek || maxTimeBlock == CITimeUnitDay)
     {
-        number = abs(interval/CITimeUnitDay);
+        number = fabs(interval/CITimeUnitDay);
         result = [NSString stringWithFormat:@"%d day", number];
-    } else if (abs(interval) < CITimeUnitMonth || maxTimeBlock == CITimeUnitWeek)
+    } else if (fabs(interval) < CITimeUnitMonth || maxTimeBlock == CITimeUnitWeek)
     {
-        number = abs(interval/CITimeUnitWeek);
+        number = fabs(interval/CITimeUnitWeek);
         result = [NSString stringWithFormat:@"%d week", number];
-    } else if (abs(interval) < CITimeUnitYear || maxTimeBlock == CITimeUnitMonth)
+    } else if (fabs(interval) < CITimeUnitYear || maxTimeBlock == CITimeUnitMonth)
     {
-        number = abs(interval/CITimeUnitMonth);
+        number = fabs(interval/CITimeUnitMonth);
         result = [NSString stringWithFormat:@"%d month", number];
     } else
     {
-        number = abs(interval/CITimeUnitYear);
+        number = fabs(interval/CITimeUnitYear);
         result = [NSString stringWithFormat:@"%d year", number];
     }
     if (number != 1) {
