@@ -10,7 +10,6 @@
 
 @interface UIApplication (Concrete)
 
-+ (void)setRootViewControllerFromStoryboard:(NSString *)storyboardName withViewControllerId:(NSString *)viewControllerId;
 + (id)viewControllerFromStoryboard:(NSString *)storyboardName withViewControllerId:(NSString *)viewControllerId;
 
 + (void)startNetworkActivity;
