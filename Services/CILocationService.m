@@ -8,7 +8,6 @@
 
 #import "CILocationService.h"
 #import "NSObject+Concrete.h"
-#import "CILogger.h"
 
 #define DEFAULT_MAP_APPS_KEY @"Default Maps App"
 
