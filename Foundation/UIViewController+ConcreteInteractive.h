@@ -11,6 +11,7 @@
 @protocol CIStoryboardLoading <NSObject>
 
 + (NSString *)viewControllerIdentifier;
++ (instancetype)loadViewControllerFromStoryboardWithName:(NSString *)storyboardName;
 
 @end
 

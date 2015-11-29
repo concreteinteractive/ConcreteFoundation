@@ -12,20 +12,6 @@
 
 static NSInteger networkOperationCount = 0;
 
-+ (id)viewControllerFromStoryboard:(NSString *)storyboardName withViewControllerId:(NSString *)viewControllerId
-{
-    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
-    if(storyboard == nil){
-        @throw [NSException exceptionWithName:NSInvalidArgumentException reason:[NSString stringWithFormat:@"Unable to find storyboard with name: %@",storyboardName] userInfo:nil];
-    }
-    UIViewController* viewController = [storyboard instantiateViewControllerWithIdentifier:viewControllerId];
-    
-    if(viewController == nil){
-        @throw [NSException exceptionWithName:NSInvalidArgumentException reason:[NSString stringWithFormat:@"Unable to find viewController with id: %@ in storyboard: %@", viewControllerId, storyboardName] userInfo:nil];
-    }
-    return viewController;
-}
-
 + (void)startNetworkActivity {
     networkOperationCount++;
     [[UIApplication sharedApplication] updateNetworkActivityIndicator];

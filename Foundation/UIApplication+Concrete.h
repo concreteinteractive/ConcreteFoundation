@@ -10,8 +10,6 @@
 
 @interface UIApplication (Concrete)
 
-+ (id)viewControllerFromStoryboard:(NSString *)storyboardName withViewControllerId:(NSString *)viewControllerId;
-
 + (void)startNetworkActivity;
 + (void)finishNetworkActivity;
 
