@@ -22,9 +22,9 @@ static NSUInteger timerLoopCount = 0;
 
 // TODO: Change this to categories on CLLocationManager and MKMapItem
 
-+ (CILocationService *)sharedInstance
++ (CILocationService *)concreteSharedInstance
 {
-    return [super sharedInstance];
+    return [super concreteSharedInstance];
 }
 
 - (CILocationService *)init
@@ -205,7 +205,7 @@ static NSUInteger timerLoopCount = 0;
                 [fromMapItem setName:fromPlaceName];
             } else
             {
-                if ([self sharedInstance].currentLocation == nil)
+                if ([self concreteSharedInstance].currentLocation == nil)
                 {
                     if (++timerLoopCount < 5)
                     {
@@ -231,7 +231,7 @@ static NSUInteger timerLoopCount = 0;
                     }
                 }
                 timerLoopCount = 0;
-                MKPlacemark *fromPlacemark = [[MKPlacemark alloc] initWithCoordinate:[self sharedInstance].currentLocation.coordinate
+                MKPlacemark *fromPlacemark = [[MKPlacemark alloc] initWithCoordinate:[self concreteSharedInstance].currentLocation.coordinate
                                                                    addressDictionary:nil];
                 fromMapItem = [[MKMapItem alloc] initWithPlacemark:fromPlacemark];
                 [fromMapItem setName:NSLocalizedString(@"Current Location", @"Current Location")];
@@ -293,7 +293,7 @@ static NSUInteger timerLoopCount = 0;
         
         if (location == nil)
         {
-            if ([self sharedInstance].currentLocation == nil)
+            if ([self concreteSharedInstance].currentLocation == nil)
             {
                 if (++timerLoopCount < 5)
                 {
@@ -319,7 +319,7 @@ static NSUInteger timerLoopCount = 0;
             }
             timerLoopCount = 0;
             // Default to current position if no location was specified
-            CLLocationCoordinate2D currentCoordinates = [self sharedInstance].currentLocation.coordinate;
+            CLLocationCoordinate2D currentCoordinates = [self concreteSharedInstance].currentLocation.coordinate;
             location = [NSString stringWithFormat:@"%lf,%lf", currentCoordinates.latitude, currentCoordinates.longitude];
         }
         

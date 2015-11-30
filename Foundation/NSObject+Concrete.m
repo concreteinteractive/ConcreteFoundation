@@ -14,32 +14,32 @@
 
 @implementation NSObject (Concrete)
 
-+ (instancetype)sharedInstance
++ (instancetype)concreteSharedInstance
 {
     @synchronized(NSStringFromClass([self class])) {
         if (objc_getAssociatedObject(self, SHARED_INSTANCE_KEY) == nil) {
-            [self setSharedInstance:[[[self class] alloc] init]];
+            [self concreteSetSharedInstance:[[[self class] alloc] init]];
         }
         return objc_getAssociatedObject(self, SHARED_INSTANCE_KEY);
     }
 }
 
-+ (void)setSharedInstance:(id)sharedInstance
++ (void)concreteSetSharedInstance:(id)sharedInstance
 {
     // OBJC_ASSOCIATION_RETAIN Specifies a strong reference to the associated object, and that the association is made atomically.
     objc_setAssociatedObject(self, SHARED_INSTANCE_KEY, sharedInstance, OBJC_ASSOCIATION_RETAIN);
 }
 
-+ (BOOL)sharedInstanceExists
++ (BOOL)concreteSharedInstanceExists
 {
     id instance = objc_getAssociatedObject(self, SHARED_INSTANCE_KEY);
     return instance != nil;
 }
 
-+ (void)purgeSharedInstance
++ (void)concretePurgeSharedInstance
 {
     @synchronized(NSStringFromClass([self class])) {
-        [self setSharedInstance:nil];
+        [self concreteSetSharedInstance:nil];
     }
 }
 

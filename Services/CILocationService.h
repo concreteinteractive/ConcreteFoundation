@@ -42,7 +42,7 @@ typedef enum {
 @property (nonatomic, weak) id<CILocationDelegate> delegate;
 @property (nonatomic) NSTimeInterval serviceTimeoutInterval;
 
-+ (CILocationService *)sharedInstance;
++ (CILocationService *)concreteSharedInstance;
 
 - (void) startService;
 - (void) stopService;
